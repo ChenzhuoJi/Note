@@ -13,3 +13,9 @@
 
 ## 2024/7/26
 将上述的内容打进了这份Schedule中
+
+## 2024/7/27
+我成功的将这份文件提交到了github上面""http:\github.com\ChenzhuoJi\Note""
+
+* 点击"source control"(Ctrl+Shift+G)
+* 在 SOURCE CONTROL 下边的message栏写入 update ，然后点击右边的"..."处，点击"push"

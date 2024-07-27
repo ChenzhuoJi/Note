@@ -36,4 +36,7 @@ $$
 **Proof:** 
 $ghg^{-1} \in H$,says that $\exist h_1 \in H,ghg^{-1}=h_1\Rightarrow gh=h_1g$,showing $\forall ah_1\in aH,\exist h_2a\in Ha,s.t\ ah_1=h_2a$
 
- 
+**The ooperation on NSG:** Define '$\cdot $':
+$$
+Ha\cdot Hb=H(ab)
+$$
