@@ -19,3 +19,5 @@
 
 * 点击"source control"(Ctrl+Shift+G)
 * 在 SOURCE CONTROL 下边的message栏写入 update ，然后点击右边的"..."处，点击"push"
+![](image\截图1.png)
+这是在github上截下来的图，大功告成！
