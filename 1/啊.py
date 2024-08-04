@@ -1,0 +1,9 @@
+#插入
+university=['1','2','3']
+university.insert(2,'wuhandaxue')
+print(university)
+#pop（）语句删除
+poped_university=university.pop(2)
+print(university)
+print(poped_university)
+#pop()语句可以理解为把元素摘出来以后‘删除’，将删除的再摘出打印，分为两家
