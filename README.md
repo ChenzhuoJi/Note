@@ -12,7 +12,7 @@
 该repository有两个branches:Code_updating和Note_updating
 
 ## Code_upadting
-暂存python代码，可读性极低，大多是我自己的学习性和试验性的代码，参考价值不高
+暂存python代码，自认为可读性极低，大多是我自己的学习性和试验性的代码，参考价值不高。以后在学习过程中会上传关于统计方面的matlab或python代码
 
 ## Note_updating
 1. 存放有learn文件夹，有我学习的笔记，可能大多数是我自己的理解，一些笔记会使用英文。
