@@ -1,7 +1,6 @@
 # 第十四章：数项级数
-
- 2024/9/2
-
+***
+*2024/9/2*
 ### 数列极限（回忆）
 
 **数列$S_n$的极限定义（$\varepsilon-N$）**：
@@ -70,7 +69,7 @@ $$\begin{align}
 和数列极限类似，我们**更关注**$\sum \limits_ {n = N+1} ^ \infty u_n $的收敛性，即只关注后续无穷项是否能控制，而对前几项不很关心。
 
 
-### 正向级数
+### 正项级数
 
 **例1**：考虑$\sum \limits_ {n = 1} ^ \infty \frac{1}{n^p} $的收敛性：
 
@@ -89,8 +88,7 @@ $$A_n =\int \limits_1 ^ n f(x)\ {\rm{d}}x  $$
 则$\sum \limits_ {n =1} ^ \infty f(n) $与$\{A_n\}$同时收敛，同时发散。
 
 **例2：** 考虑$\sum \limits_ {n = 3} ^ \infty \frac{1}{n(\ln n) ^ p} $的收敛性：
-思路： $$A_n =\int \limits_3 ^ n \frac{1}{n(\ln n) ^ p}\ {\rm{d}}x =$$
-\begin{case}
-    x=y
-\end{case}
-x=y
+思路： $$A_n =\int \limits_3 ^ n \frac{1}{x(\ln x) ^ p}\ {\rm{d}}x =\int \limits_3 ^ n \frac{\rm{d}\ln x}{(\ln x)^p}=\left.\frac{1}{-p+1} (\ln x)^{-p+1}\right |_3 ^n $$
+上述级数显然是收敛的.
+
+***
