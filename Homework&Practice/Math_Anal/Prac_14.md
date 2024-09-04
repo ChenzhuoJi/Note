@@ -1,52 +1,81 @@
-### 练习14.2
+**练习14.2**
 *（奇数题号）2024/9/3*
 (1)
 $$
 \sum_{n=1}^{\infty}\frac{\prod_{i=1}^n(3i-1)}{\prod_{i=1}^{n}(4i-3) } 
 $$
-**Solution**  $\ \ u_n=\frac{\prod_{i=1}^n(3i-1)}{\prod_{i=1}^{n}(4i-3) } $,$\frac{u_{n+1}}{u_n}=\frac{3n+2}{4n+1}<\frac{8}{9},when\ n>2$.
+
+**Solution**  
+
+$\displaystyle u_n=\cfrac{\prod_{i=1}^n(3i-1)}{\prod_{i=1}^{n}(4i-3) } $,$\displaystyle \frac{u_{n+1}}{u_n}=\frac{3n+2}{4n+1}<\frac{8}{9},when\ n>2$.
 所以原级数收敛。
 (5)
 $$
 \sum_{n=2}^{\infty}\frac{1}{(\ln n)^n}
 $$
-**Solution** $\ \ [(\ln n)^n]^{\frac{1}{n}}=\ln n>1,n>3$
+
+**Solution** 
+
+$[(\ln n)^n]^{\frac{1}{n}}=\ln n>1,n>3$
 所以原级数发散。
-（7）
+(7)
 $$
 \sum_{n=1}^{\infty}\frac{3n^3+1}{2^n}
 $$
-**Solution** $\ \ (\frac{3n^3+1}{2^n})^{\frac{1}{n}}=\frac{(3n^3+1)^{\frac{1}{n}}}{2} \rightarrow \frac{1}{2}$
+
+**Solution** 
+
+$\displaystyle (\frac{3n^3+1}{2^n})^{\frac{1}{n}}=\frac{(3n^3+1)^{\frac{1}{n}}}{2} \rightarrow \frac{1}{2}$
 原级数收敛。
+
 (9)
 $$
 \sum_{n=1}^{\infty}\sin^2\frac{1}{n}
 $$
-**Solution**$\ \ \sin^2 \frac{1}{n} \sim \frac{1}{n^2},n\rightarrow 0 $
+
+**Solution**
+
+$\displaystyle \sin^2 \frac{1}{n} \sim \frac{1}{n^2},n\rightarrow 0 $
 原级数收敛。
+
 (11)
 $$
 \sum_{n=1}^{\infty}\frac{1}{(n^2-1)^{\frac{1}{3}}}
 $$
-**Solution**$\ \ \frac{1}{(n^2-1)^{\frac{1}{3}}} \sim \frac{1}{n^{\frac{2}{3}}}  $
+
+**Solution**
+
+$\displaystyle \frac{1}{(n^2-1)^{\frac{1}{3}}} \sim \frac{1}{n^{\frac{2}{3}}}  $
 原级数发散。
+
 (15)
 $$
 \sum_{n=2}^{\infty}\frac{1}{(\ln n)^k}
 $$
-**Solution**$\ \ \frac{1}{\ln n}>\frac{1}{n^{\frac{1}{k}}}, $when n is large enough.$\frac{1}{(\ln n)^k}>\frac{1}{n}$
+
+**Solution**
+
+$\displaystyle \frac{1}{\ln n}>\frac{1}{n^{\frac{1}{k}}}, $when n is large enough.$\displaystyle \frac{1}{(\ln n)^k}>\frac{1}{n}$
 原级数发散。
+
 (17)
 $$
 \sum(1-\cos \frac{x}{n})\ (x\in \mathbb{R})
 $$
-**Solution**$\ \ 1-\cos \frac{x}{n}\sim \frac{(\frac{x}{n})^2}{2}$
+
+**Solution**
+
+$\displaystyle 1-\cos \frac{x}{n}\sim \frac{(\frac{x}{n})^2}{2}$
 原级数收敛。
+
 (19)
 $$
 \sum(\frac{1}{\sqrt{n}}-\sqrt{\ln(1+\frac{1}{n})})
 $$
-**Solution**$\ \ \frac{1}{\sqrt{n}}-\sqrt{\ln(1+\frac{1}{n})}=\frac{\frac{1}{n}-\ln(1+\frac{1}{n})}{\frac{1}{\sqrt{n}}+\sqrt{\ln(1+\frac{1}{n})}}$,consider *Taylor Formula*:
+
+**Solution**
+
+$\displaystyle \frac{1}{\sqrt{n}}-\sqrt{\ln(1+\frac{1}{n})}=\frac{\frac{1}{n}-\ln(1+\frac{1}{n})}{\frac{1}{\sqrt{n}}+\sqrt{\ln(1+\frac{1}{n})}}$,consider *Taylor Formula*:
 $$
 \frac{1}{n}-\ln(1+\frac{1}{n})=\frac{1}{n}-(\frac{1}{n}-\frac{1}{2n^2}+o(\frac{1}{n^2}))=\frac{1}{2n^2}+o(\frac{1}{n^2})
 $$
@@ -58,11 +87,15 @@ $$
 \frac{\frac{1}{n}-\ln(1+\frac{1}{n})}{\frac{1}{\sqrt{n}}+\sqrt{\ln(1+\frac{1}{n})}}<\frac{\frac{1}{2n^2}}{2\sqrt{\ln(1+\frac{1}{n})}}\sim \frac{1}{n^{\frac{5}{2}}}
 $$
 原级数收敛。
+
 (21)
 $$
 \sum_{n=2}^{\infty}\frac{1}{\ln(n!)}
 $$
-**Solution** $\ \ \ln(n!)=\displaystyle \sum_{i=1}^{n}\ln i$.According ==integral inequlity==, the estimate of this value is:
+
+**Solution** 
+
+$\ln(n!)=\displaystyle \sum_{i=1}^{n}\ln i$.According ==integral inequlity==, the estimate of this value is:
 $$
 \int_{1}^{n} \ln x \mathrm{d}x<\sum_{i=1}^{n}\ln i<\int_{1}^{n+1}\ln x  \mathrm{d}x \tag{2.1}
 $$
@@ -78,11 +111,12 @@ $$
 $$
 原级数发散
 
-大概前几天用到达朗贝尔和柯西判别法，后面的几题都是估计，牢记几个不等式和*Taylor Formula*。
+大概前几题用到达朗贝尔和柯西判别法，后面的几题都是估计，牢记几个不等式和*Taylor Formula*。
+
 ***
+**（14 A）**
 *2024/9/4*
 
-**（14 A）**
 1.$\{a_n\}$递减并且级数$\displaystyle \sum_{n=1}^{\infty}a_n$收敛，求证：$\lim\limits_{n \to \infty}na_n=0$
 **Proof** $\ \ \forall \varepsilon>0,\exists N,when\ n>N,\forall p,\displaystyle \sum_{k= n+1}^{n+p}a_k<\varepsilon,$when $p=n$,the form is 
 $$
@@ -101,7 +135,7 @@ $$
 \lim_{n \to \infty}(2n+1)a_{2n+1}=0
 $$
 
-2. (4) 判断收敛发散
+1. (4) 判断收敛发散
 $$
 \sum_{n=3}^{\infty}\frac{1}{n(\ln n)^p(\ln \ln n)^q}
 $$
