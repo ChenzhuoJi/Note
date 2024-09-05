@@ -194,15 +194,6 @@ $$
 从而$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛。
 **例：** 
 
-\begin{align}
-    u_n = \{     
-    \begin{aligned}
-     2 ^{-n}\\
-     3 ^ {- n}\\
-    \end{aligned}
-    \.
-\end{align}
-
 可以利用柯西判别法求解。
 
 ## 14.4一般项级数
