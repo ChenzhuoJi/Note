@@ -79,3 +79,115 @@ $$
 \bigcirc \bigcirc| \bigcirc| \bigcirc:(1,0,0)
 $$
 **i.e.** $(^{1+3-1}_{\ \ \ 3-1})=(^3_2)=3$
+***
+## Chapter.II Axioms of Probability
+*2024/9/5*
+### Set
+**Definition 2.1**
+1. random experiment
+2. sample space (is denoted by $S$)
+3. sample point 
+
+*Remark 2.2* $S$ can be finite or **infinite** (conutable or uncountable)
+
+**Definition 2.2** 
+**subset/superset**
+
+**Definition 2.3**
+**event**
+
+*Remark 2.3* Sure set: $S$, impossible set : $\empty$
+
+**Relation**
+
+1. Union
+2. Intersection
+3. Countable union/intersection
+4. Mutually exclusive: $E\cap F=\empty$
+5. Complement: $E^c$
+6. Difference: $E\setminus F$
+7. Symmertric difference: $E\triangle F=\{ \omega|\omega\in E\setminus F \ \rm{or}\  \omega\in F\setminus E \}$
+
+**Proposition 2.5** (*De Morgan's Law*)
+$$
+(\bigcup_{i=1}^{n}E_i)^c=\bigcap_{i=1}^{n}E_i 
+\\
+(\bigcap_{i=1}^{n}E_i)^c=\bigcup_{i=1}^{n}E_i 
+$$
+### Axioms of Probability
+
+**Some Properties**
+
+1. 
+$$
+\mathbb{P}(\empty)=0
+$$
+
+**Proof** If we consider a sequence $\{ E_i \}$ where $E_1=S,E_i=\empty,\text{for}\ i\ge 2$,then $\displaystyle S=\bigcap_{} E_i$.Hence,
+$$
+\mathbb{P}(S)=\mathbb{P}(\bigcup_{i=1}^{\infty} E_i)=\sum_{i=1}^{\infty}\mathbb{P}(E_i)=\mathbb{P}(S)+\sum_{i=2}^{\infty}\mathbb{P}(E_i)\implies \mathbb{P}(\empty)=0
+$$
+
+2. 
+$$
+\mathbb{P}\left( \bigcup_{i=1}^{n}E_i \right)=\sum_{i=1}^{n}\mathbb{P}(E_i) 
+$$
+where $E_i.E_j,i\not=j$ are mutually exclusive
+
+**Proof** Similar to **Proof.1**
+
+3. 
+$$
+\mathbb{P}(E)\le \mathbb{P}(F)
+$$
+where $E \subseteq F \subseteq \mathcal{A} $
+
+**Proof** $\displaystyle \mathbb{P}(F)=\mathbb{P}(E+F\setminus E)=\mathbb{P}(E)+\mathbb{P}(F\setminus E)$
+
+4. (inclusion and exclusion indentity) For any two events $E,F$
+$$
+\mathbb{P}(E \cup F)=\mathbb{P}(E)+\mathbb{P}(F)-\mathbb{P}(E\cap F)
+$$
+$$
+\mathbb{P}\left (\bigcup_{i=1}^{n}E_i \right )=\sum_{k=1}^{n}(-1)^{k-1}\sum_{1\le i_1 \le i_2\le \cdots\le i_k\le n}\mathbb{P}(E_{i_1}\cap E_{i_2}\cdots \cap E_{i_k})\tag{2.1}
+$$
+
+**Proof** $\mathbb{P}(E\cup F)=\mathbb{P}(E\cup E^cF)=\mathbb{P}(E)+\mathbb{P}(E^cF)$,
+
+consider $EF+E^cF=F,EF\cap E^cF=\empty \implies \mathbb{P}(E)+\mathbb{P}(E^cF)=\mathbb{P}(E)+\mathbb{P}(F)-\mathbb{P}(EF)$
+
+**Ex** $n=4$:
+$$
+\begin{aligned}
+&\mathbb{P}\left( \bigcup_{i=1}^{4}E_i \right)\\
+&=\mathbb{P}(E_1)+\mathbb{P}(E_2)+\mathbb{P}(E_3)+\mathbb{P}(E_4)\\
+&-\mathbb{P}(E_1E_2)-\mathbb{P}(E_2E_3)-\mathbb{P}(E_2E_4)-\mathbb{P}(E_1E_4)-\mathbb{P}(E_1E_3)-\mathbb{P}(E_3E_4)\\
+&+P(E_1E_2E_3)+\mathbb{P}(E_1E_3E_4)+\mathbb{P}(E_1E_2E_4)+\mathbb{P}(E_2E_3E_4)\\
+&-\mathbb{P}(E_1E_2E_3E_4)
+\end{aligned}
+$$
+
+5.  
+$$
+\mathbb{P}(E\cup F)\le \mathbb{P}(E)+\mathbb{P}(F)
+$$
+(A gerneralization) For a finite sequence of events $E_1,E_2, \ldots ,E_n$
+$$
+\mathbb{P}\left( \bigcup_{i=1}^{n}E_i  \right)\le \mathbb{P}(E_1)+\mathbb{P}(E_2)+ \cdots \mathbb{P}(E_n) \tag{2.2}
+$$
+(Infinite) *Bool's inequality* : For a countably infinite sequence of events $\{ E_i \}_{i\ge 1}$
+$$
+\mathbb{P}\left( \bigcup_{i=1}^{\infty}E_i \right)\le \sum_{i=1}^{\infty}\mathbb{P}(E_i)
+$$
+
+**Proof (2.2)** Note the identity:
+$$
+\bigcup_{i=1}^{n}E_i=E_1+E_1^cE_2+ \cdots +E_1^cE_2^c\cdots E_{n-1}^cE_n
+$$
+$$
+\mathbb{P}\left( \bigcup_{i=2}^{n}E_i\right )=\mathbb{P}(E_1)+\sum_{i=1}^{n}\mathbb{P}(E_1^cE_2^c\cdots E_{i-1}^c E_i)
+$$
+denote $E_1^cE_2^c\cdots E_{i-1}^c E_i=B_i$, where $\mathbb{P}(B_i)\le \mathbb{P}(E_i)$.Thus,
+$$
+\mathbb{P}\left( \bigcup_{i=1}^{n}E_i  \right)\le \mathbb{P}(E_1)+\mathbb{P}(E_2)+ \cdots \mathbb{P}(E_n)
+$$

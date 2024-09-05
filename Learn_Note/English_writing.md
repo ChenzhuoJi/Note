@@ -39,4 +39,6 @@
 假设n-1时方程成立：assume equation* for n-1
 
 推广：gerneralization
+
+比如说:say
 >where we say that the outcome is (i, j) if experiment 1 results in its ==ith== possible outcome and experiment 2 then results in its jth possible outcome. ==Hence==, the set of possible outcomes consists of m rows, each containing n elements. ==This proves the result==.
