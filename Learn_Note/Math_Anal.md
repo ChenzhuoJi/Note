@@ -54,7 +54,7 @@ $$|u_{n+1} + u_{n+2} + \cdots + u_{n+m} | < \varepsilon$$由柯西收敛原理�
 思路：$\displaystyle\frac{\sin \sqrt{n}}{n^2} \le \frac{1}{n^2} $，收敛。
 **例4：**：考虑$\displaystyle\sum \limits_ {n = 1} ^ \infty q^n $的收敛性：
 $$\begin{align}
-\begin{aligned}
+\begin{aligned}pip insatll latex2sympy
     S_n = \sum \limits_ {k = 1} ^ \infty q^k = \{n+1,\quad q = 1\\
     \end{aligned}
 \end{align}$$

@@ -26,7 +26,7 @@ $$
 
 $
 \begin{aligned}
-(3x^2+y)^5 & = (3x^2)^5+5(3x^2)^4y+10(3x^2)^3y^2+10(3x^2)^2y^3+5(3x^2)y^4+y^5  \\
+(3x^2+y)^5& = (3x^2)^5+5(3x^2)^4y+10(3x^2)^3y^2+10(3x^2)^2y^3+5(3x^2)y^4+y^5  \\
 & = 243x^{10}+405x^{8}y+270x^{6}y^{2}+90x^4y^3+15x^2y^4+y^5  \\
 \end{aligned}
 $
@@ -65,3 +65,4 @@ According the collary of pigionhole principle, $\displaystyle \left\lceil \frac{
 (d): $B^c\cup A$: $\{ 1g,1f,1s,0s \}$
 
 **Problem.10**
+$\frac{1}{2}$
