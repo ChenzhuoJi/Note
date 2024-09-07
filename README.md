@@ -12,10 +12,12 @@
 
 该repository有两个branches:Code_updating和Note_updating
 
-## Code_upadting
-暂存python代码，自认为可读性极低，大多是我自己的学习性和试验性的代码，参考价值不高。以后在学习过程中会上传关于统计方面的matlab或python代码
+## Code_upadting 
+暂存python代码，以后在学习过程中会上传关于统计方面的matlab或python代码
 
-## Note_updating
-1. 存放有learn文件夹，有我学习的笔记，可能大多数是我自己的理解，一些笔记会使用英文。
+## Note_updating (https://github.com/ChenzhuoJi/Note/tree/Note_updating)
+1. 存放有Learn_Note文件夹，有我学习的笔记，经过了我的理解和加工，一些笔记会使用英文。
+### Writing.md
 2. Daily.md是我的日志记录，我将上传自己的一些文章，笔法尚不成熟，但是相信会在不断的写作中锤炼进步
 3. lines.md大多数是书影评和书摘。
+4. novel.md是我构思的一个故事，是我的第一次写作实践
