@@ -80,9 +80,11 @@ $$
 $$
 **i.e.** $(^{1+3-1}_{\ \ \ 3-1})=(^3_2)=3$
 ***
-## Chapter.II Axioms of Probability
+
+# Chapter.II Axioms of Probability
+
 *2024/9/5*
-### Set
+## Set
 **Definition 2.1**
 1. random experiment
 2. sample space (is denoted by $S$)
@@ -114,7 +116,7 @@ $$
 \\
 (\bigcap_{i=1}^{n}E_i)^c=\bigcup_{i=1}^{n}E_i 
 $$
-### Axioms of Probability
+## Axioms of Probability
 
 **Some Properties**
 
