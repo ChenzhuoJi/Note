@@ -183,7 +183,8 @@ $$
 
 **例：** 判断$\displaystyle\sum \limits_ {n = 1} ^ \infty  \frac{x^n}{(1+x)(1+x)^2\cdots(1+x)^n}, \quad x > 0$的敛散性
 
-**思路：** $$
+**思路：** 
+$$
 \frac{u_{n +1}}{u_n} =\frac{x}{1 + x^{n +1} }
 $$
 所以：
@@ -218,4 +219,47 @@ $$
 
 现在，我们考虑第一节遗留的问题：
 $\displaystyle\sum \limits_ {n = 1} ^ \infty v_n u_n  = \sum \limits_ {k = n + 1} ^ {n + p} v_k u_k$
+
+## 14.4 交错级数
+
+$\displaystyle \sum_{k=1}^{\infty}\sin (kx)$的敛散性。（裂项相消）
+$$
+\begin{aligned}
+2\sin(\frac{x}{2})\sum_{k=1}^{m}(kx) & = \sum_{k=1}^{m}2\sin(kx)\sin(\frac{x}{2})  \\
+& = \sum_{k=1}^{m}[\cos((k-\frac{1}{2})x)-\cos((k+\frac{1}{2})x)]  \\
+& = \cos(\frac{x}{2})-\cos[(m+\frac{1}{2})x]  \\
+\end{aligned}
+$$
+
+事实上也是$\sum \sin kx$的一个简化公式。
+1. 阿贝尔判别法
+2. 迪利克雷判别法 :sweat::sweat::sweat:
+
+$\displaystyle \sum_{n=1}^{\infty}\frac{\sin nx}{n^p}$在 $0<p\le 1$时条件收敛。
+$$
+|\sin nx|/n^p\ge \ \frac{\sin^2 nx}{n^p}=(\frac{1}{n^p})(\rm{divergent})-\frac{\cos 2nx}{n^p}(convegent)
+$$
+
+*2024/9/9*
+## 14.5 重排级数和组合级数
+
+### 组合级数
+
+组合级数事实上是原级数的一个子列。
+
+**Theorem 14.5.1**
+若级数$\displaystyle \sum_{n=1}^{\infty}u_n$收敛，那么
+
+**Theorem 14.5.2**
+
+### 重排级数
+
+**正部和负部** 
+
+**Theorem 14.5.3**
+
+**Theorem 14.5.4**
+
+## 无穷乘积
+
 
