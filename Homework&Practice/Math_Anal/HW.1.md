@@ -37,6 +37,7 @@ $$
 $\displaystyle u_n=\cfrac{\prod_{i=1}^n(3i-1)}{\prod_{i=1}^{n}(4i-3) } $,$\displaystyle\frac{u_{n+1}}{u_n}=\frac{3n+2}{4n+1}<\frac{8}{9},\ n>2$.
 
 所以原级数收敛。
+
 (2)
 
 $$
@@ -78,6 +79,7 @@ u_n=\frac{(n!)^2}{(2n)!}\implies \frac{u_{n+1}}{u_n}=\frac{(n+1)^2}{(2n+1)(2n+2)
 $$
 
 原级数收敛。
+
 (5)
 
 $$
@@ -89,6 +91,7 @@ $$
 $[(\ln n)^n]^{\frac{1}{n}}=\ln n>1,n>3$
 
 所以原级数发散。
+
 (6)
 
 $$
@@ -115,6 +118,17 @@ $\displaystyle (\frac{3n^3+1}{2^n})^{\frac{1}{n}}=\frac{(3n^3+1)^{\frac{1}{n}}}{
 
 原级数收敛。
 
+(8)
+$$
+\sum_{n=1}^{\infty}\frac{n^3[\sqrt{2}+(-1)^n]^n}{3^n}
+$$
+
+**Solution**
+$$
+u_n=\frac{n^3[\sqrt{2}+(-1)^n]^n}{3^n}\implies \sqrt[n]{u_n}=\sqrt[n]{n^3}\frac{\sqrt{2}+(-1)^n}{3}<1,\ n\to \infty
+$$
+所以原级数收敛。
+
 (9)
 
 $$
@@ -125,6 +139,18 @@ $$
 
 $\displaystyle\sin^2\frac{1}{n} \sim\frac{1}{n^2},n\rightarrow0 $
 
+原级数收敛。
+
+(10)
+$$
+\sum_{n=1}^{\infty}2^n\sin \frac{x}{3^n}
+$$
+
+**Solution**
+
+$$
+u_n=2^n\sin \frac{x}{3^n}, \ n\to \infty, \ \sqrt[n]{u_n}=2\sqrt[n]{\sin \frac{x}{3^n}}\sim \frac{2}{3}\sqrt[n]{x}\to \frac{2}{3}
+$$
 原级数收敛。
 
 (11)
@@ -139,6 +165,40 @@ $\displaystyle\frac{1}{(n^2-1)^{\frac{1}{3}}} \sim\frac{1}{n^{\frac{2}{3}}}  ,n 
 
 原级数发散。
 
+(12)
+$$
+\sum_{n=1}^{\infty} \frac{1}{n\sqrt[n]{n}}
+$$
+
+**Solution**
+由于$\sqrt[n]{n}<\ln n , \ n\to \infty$
+$$
+u_n=\frac{1}{n\sqrt[n]{n}}>\frac{1}{n\ln n},\ n\to \infty
+$$
+由比较判别法可知原级数发散
+
+(13)
+$$
+\sum_{n=1}^{\infty} \frac{\ln n}{n^2}
+$$
+
+**Solution**
+$$
+u_n= \frac{\ln n}{n^2}<\frac{1}{n^{\frac{3}{2}}}, \ n\to \infty
+$$
+原级数收敛。
+
+(14)
+$$
+\sum_{n=1}^{\infty}\frac{n^{n-1}}{(2n^2+n+1)^{\frac{n-1}{2}}}
+$$
+
+**Solution**
+$$
+u_n=\frac{n^{n-1}}{(2n^2+n+1)^{\frac{n-1}{2}}}=(\frac{1}{2+\frac{2}{n}+\frac{1}{n^2}})^{\frac{n-1}{2}}<\frac{1}{(\sqrt{2})^{n-1}}
+$$
+由比较判别法可知原级数收敛。
+
 (15)
 
 $$
@@ -150,6 +210,23 @@ $$
 $\displaystyle\frac{1}{\ln n}>\frac{1}{n^{\frac{1}{k}}}, 当n足够大的时候$.$\displaystyle \frac{1}{(\ln n)^k}>\frac{1}{n}$
 
 原级数发散。
+(16)
+$$
+\sum_{n=1}^{\infty}\frac{n^{n+\frac{1}{n}}}{(n+\frac{1}{n})^n}
+$$
+
+**Solution**
+$$
+\begin{aligned}
+u_n & = \frac{n^{n+\frac{1}{n}}}{(n+\frac{1}{n})^n}  \\
+& = \exp((n+\frac{1}{n})\ln n-n\ln (n+\frac{1}{n}))  \\
+& = \exp\{(n^2+1)[\frac{\ln n}{n}-\frac{\ln(n+\frac{1}{n})}{n+\frac{1}{n}}]\}  \\
+& = \exp\{ (n^2+1)[\frac{\ln n}{n}-(\frac{\ln n}{n}+\frac{1}{n}\times \frac{1-\ln n}{n^2}+o(\frac{\ln n}{n^4}))] \}  \\
+& = \exp[(n^2+1)\times \frac{\ln n-1}{n^3}+o(\frac{\ln n}{n^2})] \\
+& = \exp(\frac{\ln n-1}{n}+o(\frac{\ln}{n^2}))\to 1,\ n\to \infty
+\end{aligned}
+$$
+所以原级数发散。
 
 (17)
 
@@ -161,6 +238,17 @@ $$
 
 $\displaystyle1-\cos\frac{x}{n}\sim\frac{(\frac{x}{n})^2}{2}$
 
+原级数收敛。
+
+(18)
+$$
+\sum_{n=1}^{\infty}(\frac{1}{n}-\ln \frac{n+1}{n})
+$$
+
+**Solution**
+$$
+u_n=\frac{1}{n}-\ln \frac{n+1}{n}=\frac{1}{n}-\frac{1}{n}+\frac{1}{2n^2}+o(\frac{1}{n^2})
+$$
 原级数收敛。
 
 (19)
@@ -188,6 +276,17 @@ $$
 $$
 
 原级数收敛。
+
+(20)
+$$
+\sum_{n=3}^{\infty}\frac{1}{n\ln n \ln \ln n}
+$$
+
+**Solution**
+$u_n=\frac{1}{n\ln n \ln \ln n}, \ f(x)=\frac{1}{x\ln x \ln x}$
+$$
+\int_{3}^{N} f(x) \mathrm{d}x=\int_{3}^{N}\frac{1}{\ln x\ln \ln x}  \mathrm{d}\ln x=\int_{\ln 3}^{\ln N} \frac{1}{t\ln t} \mathrm{d}t=\int_{\ln \ln 3}^{\ln \ln N} \frac{1}{s} \mathrm{d}s \to \infty, \ N\to \infty
+$$
 
 (21)
 

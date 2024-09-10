@@ -261,5 +261,12 @@ $$
 **Theorem 14.5.4**
 
 ## 无穷乘积
+$$
+\prod_{n=1}^{\infty} (1-\frac{x^2}{n^2})=\frac{\sin\pi x}{\pi x}\xrightarrow{\rm{expand}}\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}
+$$
+$$
+\sin(\pi x)
+$$
+
 
 
