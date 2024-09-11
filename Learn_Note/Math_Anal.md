@@ -1,6 +1,9 @@
 # 第十四章：数项级数
-***
+
+---
+
 *2024/9/2*
+
 ## 数列极限（回忆）
 
 **数列$S_n$的极限定义（$\varepsilon-N$）**：
@@ -9,36 +12,54 @@ $\exists S > 0,\forall \varepsilon > 0, \exists N > 0$,使得当$n > N $时，�
 **柯西收敛定理**: $S_n$收敛当且仅当：
 $\forall \varepsilon > 0, \exists N > 0$,使得当$n > N$ 时，有$|S_{n+m} - S_n| < \varepsilon$,则称$S_n$收敛。
 **数列的上下极限**：$\overline{\lim\limits_{n \to \infty}}S_{n} = a$，当且仅当：
+
 1. 存在${m_k}$，使得$\lim\limits_{k \to \infty}S_{m_k} = a$
 2. 对任意收敛子列${S_{n_k}}$，$\lim\limits_{k \to \infty}S_{m_k} \le a$
+
 ## 14.1级数收敛性的概念和基本性质
 
 **定义：**设$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$是一个级数，称$u_n$为级数的**通项**。令
-$$S_n = \sum \limits_ {k = 1} ^ n u_k = u_1 + u_2 + \cdots + u_n, \qquad n = 1,2,\cdots,$$
+
+$$
+S_n = \sum \limits_ {k = 1} ^ n u_k = u_1 + u_2 + \cdots + u_n, \qquad n = 1,2,\cdots,
+$$
+
 称$S_n$为级数$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$的第n个**部分和**，并称数列${S_n}$为级数$\sum \limits_ {n = 1} ^ \infty u_n$的**部分和数列**。
 
 **定义(级数收敛与发散)：** 如果$\{S_n\}$收敛（到$S$)，则称 $\sum \limits_ {n = 1} ^ \infty u_n$收敛（到$S$)，记为：
-$$S = \lim _ {n \to \infty} S_n  = \sum \limits_ {n = 1} ^ \infty u_n$$
+
+$$
+S = \lim _ {n \to \infty} S_n  = \sum \limits_ {n = 1} ^ \infty u_n
+$$
 
 如果$\{S_n\}$发散，则称 $\sum \limits_ {n = 1} ^ \infty u_n$发散，
 若$\lim \limits_ {n \to \infty} S_n = + \infty(- \infty)$,则记$\sum \limits_ {n = 1} ^ \infty u_n = + \infty(- \infty)$。
 
-
 **定义(正向级数)：** 若对任意的$n \ge 1,u_n \ge 0$，则称$\sum \limits_ {n = 1} ^ \infty u_n $是**正向级数**。
 
 **例1**： 考虑$\sum \limits_ {n = 1} ^ \infty \frac{1}{n^2} $的收敛性：
-**思路**： $$S_n = \sum \limits_ {k = 1} ^ n \frac{1}{k^2} = 1 + \sum \limits_ {k = 2} ^ n \frac{1}{(k -1)k} \le 2 - \frac{1}{n} < 2$$
+**思路**：
+
+$$
+S_n = \sum \limits_ {k = 1} ^ n \frac{1}{k^2} = 1 + \sum \limits_ {k = 2} ^ n \frac{1}{(k -1)k} \le 2 - \frac{1}{n} < 2
+$$
 
 值得注意的是，该数项级数的值为：
-$$\sum \limits_ {n = 1} ^ \infty \frac{1}{n^2}  = \frac{\pi^2}{6}$$
+
+$$
+\sum \limits_ {n = 1} ^ \infty \frac{1}{n^2}  = \frac{\pi^2}{6}
+$$
+
 我们将在后续课程进行证明。
 **例2**：考虑 $\sum \limits_ {n = 1} ^ \infty \frac{1}{n} $的收敛性：
 **思路**：证明 $\sum \limits_ {k = 1} ^ n \frac{1}{n}$无界。值得一提的是，$\sum \limits_ {n = 1} ^ \infty \frac{1}{n} \approx \ln n+r$
 
-$$\sum \limits_ {k = 2^m + 1} ^ {2^{m+1}} \frac{1}{n}  \ge \sum \limits_ {k = 2^m + 1} ^ {2^{m+1}} \frac{1}{2^{m+1}} \ge \frac{1}{2}$$
+$$
+\sum \limits_ {k = 2^m + 1} ^ {2^{m+1}} \frac{1}{n}  \ge \sum \limits_ {k = 2^m + 1} ^ {2^{m+1}} \frac{1}{2^{m+1}} \ge \frac{1}{2}
+$$
+
 发散。
 **重点：部分和数列无界即发散，对于正向级数，有界即收敛。**
-
 
 **定理（柯西收敛原理）**：$\sum \limits_ {n = 1} ^ \infty u_n $收敛当且仅当：
 $\forall \varepsilon > 0, \exists N > 0$,使得当$n \ge N$ 时，有$|\sum \limits_ {k = n+1} ^ {n+m} u_k| < \varepsilon, \quad \forall\  m \ge 1。$
@@ -49,7 +70,9 @@ $\forall \varepsilon > 0, \exists N > 0$,使得当$n \ge N$ 时，有$|\sum \lim
 设对$n \ge 1,|u_n| \le v_n$，如果$\sum \limits_ {n = 1} ^ \infty u_n $收敛，则$\sum \limits_ {n = 1} ^ \infty u_n $也收敛。
 **证明：** 由$\sum \limits_ {n = 1} ^ \infty v_n $收敛，应用柯西收敛原理，有：
 $\forall \varepsilon > 0, \exists N > 0$,使得当$n \ge N$ 时，有$v_{n+1} + v_{n+2} + \cdots + v_{n+m}  < \varepsilon , \quad \forall\  m \ge 1。$于是：
-$$|u_{n+1} + u_{n+2} + \cdots + u_{n+m} | < \varepsilon$$由柯西收敛原理可知，$\sum \limits_ {n = 1} ^ \infty u_n $收敛。
+
+$$
+|u_{n+1} + u_{n+2} + \cdots + u_{n+m} | < \varepsilon$$由柯西收敛原理可知，$\sum \limits_ {n = 1} ^ \infty u_n $收敛。
 **例3：** 考虑$\displaystyle\sum \limits_ {n = 1} ^ \infty \frac{\sin \sqrt{n}}{n^2} $的收敛性：
 思路：$\displaystyle\frac{\sin \sqrt{n}}{n^2} \le \frac{1}{n^2} $，收敛。
 **例4：**：考虑$\displaystyle\sum \limits_ {n = 1} ^ \infty q^n $的收敛性：
@@ -57,8 +80,8 @@ $$\begin{align}
 \begin{aligned}pip insatll latex2sympy
     S_n = \sum \limits_ {k = 1} ^ \infty q^k = \{n+1,\quad q = 1\\
     \end{aligned}
-\end{align}$$
-
+\end{align}
+$$
 
 **级数的四则运算：** 若$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n ,\sum \limits_ {n = 1} ^ \infty u_n $收敛,则：
 
@@ -68,40 +91,55 @@ $$\begin{align}
 
 和数列极限类似，我们**更关注**$\displaystyle\sum \limits_ {n = N+1} ^ \infty u_n $的收敛性，即只关注后续无穷项是否能控制，而对前几项不很关心。
 
-
 ## 14.2正项级数
 
 **例1**：考虑$\displaystyle\sum \limits_ {n = 1} ^ \infty \frac{1}{n^p} $的收敛性：
 
-$$\begin{align}
+$$
+\begin{align}
 \begin{aligned}
     &p > 2,&\frac{1}{n^p} < \frac{1}{n^2}，收敛\\
     &0< p < 1,&\frac{1}{n^p} \ge \frac{1}{n}，发散\\
     \end{aligned}
-\end{align}$$
+\end{align}
+$$
 
-当$1<p<2$时，令$f(x) = \frac{1}{x^p}$，考虑:$$\int \limits_1 ^ n f(x)\ {\rm{d}}x = \frac{n^{1-p}}{1-p} - \frac{1}{1-p}$$
+当$1<p<2$时，令$f(x) = \frac{1}{x^p}$，考虑:
 
+$$
+\int \limits_1 ^ n f(x)\ {\rm{d}}x = \frac{n^{1-p}}{1-p} - \frac{1}{1-p}
+$$
 
 **定理**：设$f(x)$在$[1,+\infty)$上非负递减，令
-$$A_n =\int \limits_1 ^ n f(x)\ {\rm{d}}x  $$
+
+$$
+A_n =\int \limits_1 ^ n f(x)\ {\rm{d}}x
+$$
+
 则$\displaystyle\sum \limits_ {n =1} ^ \infty f(n) $与$\displaystyle\{A_n\}$同时收敛，同时发散。
 
 **例2：** 考虑$\displaystyle \sum \limits_ {n = 3} ^ \infty \frac{1}{n(\ln n) ^ p} $的收敛性：
-思路： $$A_n =\int \limits_3 ^ n \frac{1}{x(\ln x) ^ p}\ {\rm{d}}x =\int \limits_3 ^ n \frac{\rm{d}\ln x}{(\ln x)^p}=\left.\frac{1}{-p+1} (\ln x)^{-p+1}\right |_3 ^n $$
+思路：
+
+$$
+A_n =\int \limits_3 ^ n \frac{1}{x(\ln x) ^ p}\ {\rm{d}}x =\int \limits_3 ^ n \frac{\rm{d}\ln x}{(\ln x)^p}=\left.\frac{1}{-p+1} (\ln x)^{-p+1}\right |_3 ^n
+$$
+
 上述级数显然是收敛的.
 
-***
+---
+
 *2024/09/04*
 
 回忆：
 对$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$ 与$\displaystyle\sum \limits_ {n = 1} ^ \infty v_n$，若均为正向级数，且$u_n \le v_n$，则二者同时收敛，同时发散。
 
-
 **定理1:** 设对$ n \ge 1,u_n \ge 0, v_n > 0$,且
+
 $$
 \lim _{n \to \infty} \frac{u_n}{v_n} = l \in [0,+\infty)
 $$
+
 （1）若$0 < l < + \infty$，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$ 与$\displaystyle\sum \limits_ {n = 1} ^ \infty v_n$同时收敛与发散。
 （2）若$l = 0$,$\displaystyle\sum \limits_ {n = 1} ^ \infty v_n$收敛，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛。
 （3）若$l \to + \infty$, $\displaystyle\sum \limits_ {n = 1} ^ \infty v_n$发散，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$发散。
@@ -112,16 +150,15 @@ $$
 由$\displaystyle \lim \limits_{n \to \infty} \frac{u_n}{v_n} = l$,对$\displaystyle \varepsilon_0 = \frac{l}{2}$,$\exists N > 0$,使得当$\displaystyle n \ge N$ 时，有$\displaystyle |\frac{u_n} {v_n} - l| \le \varepsilon_0 = \frac{l}{2}$。
 即可得到$\displaystyle \frac{1}{2} v_n \le u_n \le \frac{3}{2}v_n$由此可得，$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$ 与$\displaystyle\sum \limits_ {n = 1} ^ \infty v_n$同时收敛与发散。
 
-
 例1：$\displaystyle\sum \limits_ {n = 2} ^ \infty \frac{1}{n(\sqrt[n]{n} - 1)}$
 
 例2：$\displaystyle\sum \limits_ {n = 1} ^ \infty \sin\frac{x}{n^p}, \quad p > 0$
 
 思路：考虑
+
 $$
 \lim _{n \to + \infty} \frac{\sin\frac{x}{n^p}}{\frac{x}{n^p}} = 1
 $$
-
 
 例3：$\displaystyle\sum \limits_ {n = 1} ^ \infty \ [{\rm{e}} - (1 + \frac{1}{n})^n]$
 
@@ -130,23 +167,26 @@ $$
 $$
 {\rm{e}} - (1 + \frac{1}{n})^n = {\rm{e}}- \exp(n \ln (1 + \frac{1}{n}))
 $$
+
 利用泰勒展开:
+
 $$
 {\rm{e}} - \exp(1 - \frac{1}{2n} + o(\frac{1}{n^2})) = \frac{{\rm{e}}}{2n} + o(\frac{1}{n^2})
 $$
+
 所以：
+
 $$
 \lim _{n \to + \infty} \frac{{\rm{e}} - (1 + \frac{1}{n})^n}{\frac{{\rm{e}}}{2n}} = 1
 $$
 
-
 **定理（柯西判别法）：**
 
 设$\displaystyle n \ge 1, u_n \ge 0, \ r = \overline{\lim \limits_{n \to \infty}} \sqrt[n]{u_n}$。
-* 若$r < 1$，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛。
-*  若$r > 1$，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$发散。
-*  若$r < 1$，无法判断敛散性。例如$\displaystyle\sum \limits_ {n = 1} ^ \infty \frac{1}{n}$和$\displaystyle\sum \limits_ {n = 1} ^ \infty \frac{1}{n^2}$，前者发散，后者收敛。
 
+* 若$r < 1$，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛。
+* 若$r > 1$，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$发散。
+* 若$r < 1$，无法判断敛散性。例如$\displaystyle\sum \limits_ {n = 1} ^ \infty \frac{1}{n}$和$\displaystyle\sum \limits_ {n = 1} ^ \infty \frac{1}{n^2}$，前者发散，后者收敛。
 
 **证明：**
 
@@ -154,6 +194,7 @@ $$
 （2）$r = \overline{\lim \limits_{n \to \infty}} \sqrt[n]{u_n} > 1$知，存在子列$\displaystyle \{m_k\}$使得$\displaystyle \sqrt[n_k]{u_{n_k}} > 1$，从而$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$发散。
 **定理（达朗贝尔判别法）：**
 设$\displaystyle n \ge 1, u_n > 0$
+
 * 若$\overline r = \displaystyle \overline{\lim \limits_{n \to \infty}}\frac{u_{n+1}}{u_n} < 1$，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛。
 * 若$\displaystyle \underline r = \varliminf\limits _{n \to \infty}\frac{u_{n+1}}{u_n} > 1 $则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$发散。
 
@@ -161,51 +202,61 @@ $$
 
 （1）由$\overline r = \displaystyle \overline{\lim \limits_{n \to \infty}}\frac{u_{n+1}}{u_n} < 1$，知对$\displaystyle r < 1$，存在$N$，使得当$\displaystyle n \ge N$ 时，有$\displaystyle \frac{u_{n+1}}{u_n}  \le q$
 于是：
+
 $$
 u_n \le q u _ {n - 1} \le q^2 u _ {n - 2}  \le \cdots \le q^{n - N}u_N
 $$
+
 从而$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛。
 
 （2）由$\displaystyle \underline r = \varliminf\limits _{n \to \infty}\frac{u_{n+1}}{u_n} > 1 $，则存在子列$\{n_k\}$使得
+
 $$
 u_{n_{kn}} \ge q u _ {n_{k(n-1)}} \ge \cdots \ge q^{kn - kN}u_{kN}。
 $$
+
 从而$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$发散。
 **例：** 判断$\displaystyle\sum \limits_ {n = 1} ^ \infty n! (\frac{x}{n})^ n, \quad x > 0$的敛散性
 
 **思路：**
+
 $$
 \lim_{n \to \infty} \frac{(n+1)! (\frac{x}{n+1})^ {n+1} }{n! (\frac{x}{n})^ n} = \frac{x}{e}
 $$
+
 1. 若$x < {\rm{e}}$，则$\displaystyle\sum \limits_ {n = 1} ^ \infty n! (\frac{x}{n})^ n$收敛。
 2. 若$x > {\rm{e}}$，则$\displaystyle\sum \limits_ {n = 1} ^ \infty n! (\frac{x}{n})^ n$发散。
 3. 若$x = {\rm{e}}$， 所以$\displaystyle\sum \limits_ {n = 1} ^ \infty n! (\frac{x}{n})^ n$发散。
 
 **例：** 判断$\displaystyle\sum \limits_ {n = 1} ^ \infty  \frac{x^n}{(1+x)(1+x)^2\cdots(1+x)^n}, \quad x > 0$的敛散性
 
-**思路：** 
+**思路：**
+
 $$
 \frac{u_{n +1}}{u_n} =\frac{x}{1 + x^{n +1} }
 $$
+
 所以：
+
 $$
-\lim_{x \to + \infty} \frac{x}{1 + x^{n +1} } = 
+\lim_{x \to + \infty} \frac{x}{1 + x^{n +1} } =
 $$
 
 从而$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛。
-**例：** 
+**例：**
 
 可以利用柯西判别法求解。
 
 ## 14.4一般项级数
 
-**定理1：** 若$\displaystyle\sum \limits_ {n = 1} ^ \infty 
+**定理1：** 若$ \displaystyle\sum \limits_ {n = 1} ^ \infty
 |u_n|$收敛，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛。
-**定义1：** 
-* 若$\displaystyle\sum \limits_ {n = 1} ^ \infty 
-|u_n|$收敛，则称$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$绝对收敛。
-* 若$\displaystyle\sum \limits_ {n = 1} ^ \infty 
-|u_n|$发散，$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛，则称$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$条件收敛。
+**定义1：**
+
+* 若$\displaystyle\sum \limits_ {n = 1} ^ \infty
+  |u_n|$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$绝对收敛。
+* 若$\displaystyle\sum \limits_ {n = 1} ^ \infty
+  |u_n|$发散，$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛，则称$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$条件收敛。
 
 例如，$\displaystyle\sum \limits_ {n = 1} ^ \infty \frac{(-1)^{n + 1}}{n}$，对于$u_{n + 1} + u_{n + 2} + \cdots +u_{n + p} $：
 
@@ -223,6 +274,7 @@ $\displaystyle\sum \limits_ {n = 1} ^ \infty v_n u_n  = \sum \limits_ {k = n + 1
 ## 14.4 交错级数
 
 $\displaystyle \sum_{k=1}^{\infty}\sin (kx)$的敛散性。（裂项相消）
+
 $$
 \begin{aligned}
 2\sin(\frac{x}{2})\sum_{k=1}^{m}(kx) & = \sum_{k=1}^{m}2\sin(kx)\sin(\frac{x}{2})  \\
@@ -232,15 +284,18 @@ $$
 $$
 
 事实上也是$\sum \sin kx$的一个简化公式。
+
 1. 阿贝尔判别法
-2. 迪利克雷判别法 :sweat::sweat::sweat:
+2. 迪利克雷判别法
 
 $\displaystyle \sum_{n=1}^{\infty}\frac{\sin nx}{n^p}$在 $0<p\le 1$时条件收敛。
+
 $$
-|\sin nx|/n^p\ge \ \frac{\sin^2 nx}{n^p}=(\frac{1}{n^p})(\rm{divergent})-\frac{\cos 2nx}{n^p}(convegent)
+|\sin nx|/n^p\ge \ \frac{\sin^2 nx}{n^p}=(\frac{1}{n^p})(\rm{divergent})-\frac{\cos 2nx}{n^p} \rm{(convegent)}
 $$
 
 *2024/9/9*
+
 ## 14.5 重排级数和组合级数
 
 ### 组合级数
@@ -248,25 +303,42 @@ $$
 组合级数事实上是原级数的一个子列。
 
 **Theorem 14.5.1**
-若级数$\displaystyle \sum_{n=1}^{\infty}u_n$收敛，那么
+收敛级数的任意组合都收敛
 
 **Theorem 14.5.2**
+若在同一组合中的原级数各项不变号，且组合后的级数收敛，那么原级数收敛。
 
 ### 重排级数
 
-**正部和负部** 
+**正部和负部**
+正部和负部的构造可以说明绝对收敛的级数和正项级数拥有相同的收敛性。
 
 **Theorem 14.5.3**
+绝对收敛的级数重排之后仍然收敛并且和不变
 
-**Theorem 14.5.4**
+**Theorem 14.5.4** (*Riemman*)
+对于任意一个实数$\alpha$，条件收敛的级数总有一个重排级数的和等于$\alpha$
 
 ## 无穷乘积
+
 $$
 \prod_{n=1}^{\infty} (1-\frac{x^2}{n^2})=\frac{\sin\pi x}{\pi x}\xrightarrow{\rm{expand}}\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}
 $$
+
 $$
 \sin(\pi x)
 $$
 
+## 14.7
 
+### 级数的乘积
 
+**Theorem 14.7.1** *柯西定理*
+
+假设 $\displaystyle \sum_{n=1}^{\infty}a_n$, $\displaystyle \sum_{n=1}^{\infty}b_n$都绝对收敛，收敛到$A,B$, 则乘积$a_ib_j$无论按照什么方式排列，累加的级数都收敛到$AB$。
+
+**Proof**
+设${a_i},{b_j}$非负
+
+1. 证 $\displaystyle \sum_{k=1}^{n}a_{i_k}b_{j_k}\le  (\sum_{i=1}^{\infty}a_i)(\sum_{j=1}^{\infty}b_j)$，取一个$\{ c_n \}$重排$\{ a_i b_j \}$，让$C_N$是$\{ c_n \}$前N项和，再取一个有限的$\{ a_i b_j \}$包含N项的$\{ c_n \}$
+2. 证 $\{ c_n \}$是$\{ a_i b_j \}$的一个重排，$\displaystyle C_N=\sum_{n=1}^{N}c_n$, 总是能够找到$N$, 让$\{ a_i b_j \}_{i\le N_1,j\le N_2}$在$\{ c_n \}_{n< N} $之中，又因为$C_N$有上界$AB$

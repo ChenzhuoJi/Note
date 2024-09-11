@@ -228,12 +228,11 @@ $\displaystyle \sum_{n=2}^{\infty}\frac{1}{(\ln n)^{\ln n}},\sum_{n=3}^{\infty}\
 
 **Solution**
 
-(1). 
+(1).
 
 $$
 \ln n>3,n>e^3\Rightarrow \frac{1}{(\ln n)^{\ln n}} <\frac{1}{3^{\ln n}}=\frac{1}{n^{\ln 3}}\ (\sum^{\infty}\frac{1}{n^{\ln 3}}\mathrm{ \ is\  convegent})
 $$
-
 
 (2). $(\ln n)^{\ln \ln n}=e^{(\ln \ln n)^2}<e^{[(\ln n)^{\frac{1}{2}}]^2}=n$,所以$\displaystyle \sum_{n=3}^{\infty}\frac{1}{(\ln n)^{\ln \ln n}}>\sum_{n=3}^{\infty}\frac{1}{n}$
 6.
@@ -243,7 +242,7 @@ $\displaystyle u_n>0,S_n=\sum_{n=1}^{\infty}$ is divergent.Argue that $\displays
 
 **Solution**
 
-(1). $ \displaystyle u_n=S_n-S_{n-1} \implies \sum_{n=1}^{\infty}\frac{u_{n}}{S_{n}}=\sum_{n=1}^{\infty}(\frac{S_{n}-S_{n-1}}{S_n}) $. According 4. , $\displaystyle \sum_{n=1}^{\infty}\frac{u_n}{S_n}$ is divergent.
+(1). $ \displaystyle u_n=S_n-S_{n-1} \implies \sum_{n=1}^{\infty}\frac{u_{n}}{S_{n}}=\sum_{n=1}^{\infty}(\frac{S_{n}-S_{n-1}}{S_n}) $. According to 4. , $\displaystyle \sum_{n=1}^{\infty}\frac{u_n}{S_n}$ is divergent.
 
 (2). $\displaystyle \sum_{n=1}^{\infty}\frac{u_n}{S_n^{2}}<\sum_{n=1}^{\infty}\frac{S_n-S_{n-1}}{S_nS_{n-1}}=\sum_{n=1}^{\infty}(\frac{1}{S_{n-1}}-\frac{1}{S_{n}})=\sum_{n=1}^{\infty}(\frac{1}{S_1}-\frac{1}{S_n})=\frac{1}{S_1}$
 
@@ -258,3 +257,9 @@ $$
 $$
 \displaystyle \sum_{n=1}^{\infty}\frac{u_n}{S^{1+\sigma}}<\lim_{n \to \infty}\int_{S_1}^{S_n}\frac{1}{x^{1+\sigma}}  \mathrm{d}x=\lim_{n \to \infty}\left. -\frac{1}{\sigma}\frac{1}{x^{\sigma}} \right|_{S_1}^{S_n}=\frac{1}{\sigma S_1^{\sigma}}
 $$
+
+### 16
+
+级数$\displaystyle \sum_{n=1}^{\infty} a_n$收敛，则$\displaystyle \sum_{n=1}^{\infty}a_n^2,\ \sum_{n=1}^{\infty}a_n^3$都不一定收敛
+
+级数$\displaystyle \sum_{n=1}^{\infty}a_n^2$收敛，$\displaystyle \sum_{n=1}^{\infty}a_n^{2r},r>1$收敛，而$\displaystyle \sum_{n=1}^{\infty}a_n,\ \sum_{n=1}^{\infty}(-1)^{n}a_n$都不一定收敛
