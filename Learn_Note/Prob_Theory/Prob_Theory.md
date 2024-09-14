@@ -320,4 +320,128 @@ The event "none of men selects his own hat" and $E$ is complemenatary.
 
 # Charpter III
 
-## Conditional Probability
+## Conditional Probability (obeserve and predict)
+
+$$
+\mathbb{P}(E|F)=\frac{\mathbb{P}(E\cap F)}{\mathbb{P}(F)}
+$$
+
+### $P(\cdot |F)$ as a probability measure
+
+Use three axioms to prove
+
+**Prop 3.3** The function mapping $\mathbb{P}_F$: $A\to \mathbb{R}$ defined by $\mathbb{P}_F(E)=\mathbb{P}(E|F)$ is a probability measure on $(S,A)$
+
+**Prop 3.4** Let F be an event with $\mathbb{P}(F)>0$, the conditional probability of event $E\in A$ given that $F$ has occurred can be computed as:
+
+$$
+\mathbb{P}(E|F)=\frac{|E\cap F|}{|F|}
+$$
+
+**Prop 3.5** (*Mutiplication Rule*) Let $E_1,E_2, \ldots ,E_n$ be a sequence of $n\in \mathbb{N}, n\ge 1$ events. Then we have:
+
+$$
+\mathbb{P}(\bigcap_{i=1}^{n}E_i)=\mathbb{P}(E_1)\mathbb{P}(E_2|E_1)\mathbb{P}(E_3|E_1\cap E_2)\cdots \mathbb{P}(E_n|\bigcap_{i=1}^{n-1} E_i)
+$$
+
+**Proof** Expand $RHS$ and calcel out each other
+
+### Example
+
+**Example 3.1** (*Pocke game revisied*) 52 cards to 4 piles of 13 cards each. Compute the probability that each pile has exactly 1 ace.
+
+**Solution**
+
+Let $E_i$ be the event that ith pile have 1 ace
+
+$$
+\mathbb{P}(E_1E_2E_3E_4)=\mathbb{P}(E_1)\mathbb{P}(E_2|E_1)\mathbb{P}(E_3|E_1\cap E_2)\mathbb{P}(E_4|E_1\cap E_2\cap E_3)
+$$
+
+* $\displaystyle $
+
+**Example 3.2** (*The matching problem revisited*) In matching problem, the probability that no matches occur when N people select from N mixed-up hats, denoted by $P_N$, is given by:
+
+$$
+P_N=\sum_{i=0}^{N}(-1)^i \frac{1}{i!}
+$$
+
+What is the probabiliy that exactly k of the N people have matches?
+
+**Solution**
+
+Let E be the event that $1,2, \ldots ,k$ have matches, and G be the event that no matches occur among people $k+1, \ldots N$
+
+$$
+\mathbb{P}(G|E)=P_{N-k}
+$$
+
+The probability that k of N people have matches is given by :
+
+$$
+\binom{N}{k}\mathbb{P}(E\cap G)
+$$
+
+$E$ is the event that the first $k$ people get their hats, which means $N-k$ hats permutate in $N-k$ people, i.e.
+
+$$
+|E|=(N-k)!
+$$
+
+$$
+\mathbb{P}(E)=\frac{|E|}{N!}=\frac{(N-k)!}{N!}
+$$
+
+$$
+\binom{N}{k}\mathbb{P}(E\cap G)=\mathbb{P}(E)\mathbb{P}(G|E)=\frac{N!}{(N-k)!k!}\frac{(N-k)!}{N!}P_{N-k}=\frac{1}{k!}P_{N-k}
+$$
+
+## Baye's Formula
+
+### First Baye's fomula
+
+$$
+\mathbb{P}(F|E)=\frac{\mathbb{P}(E|F)\mathbb{P}(F)}{\mathbb{P}(E)}
+$$
+
+### Law of total probability
+
+Let $\{ F_i \}$ be a countable **partition** of the sample space $S$
+
+$$
+\mathbb{P}(E)=\sum_{j=1}^{\infty}\mathbb{P}(E\cap F_j)
+$$
+
+with the knowledge of conditional probability,
+
+$$
+\mathbb{P}(E)=\sum \mathbb{P}(E|F_i)\mathbb{P}(F_i)
+$$
+
+In particular,
+
+$$
+\mathbb{P}(E)=\mathbb{P}(E|F)\mathbb{P}(F)+\mathbb{P}(E|F^c)(1-\mathbb{P}(F))
+$$
+
+### Example
+
+**Example 3.3**
+
+**Solution**
+
+$$
+\mathbb{P}(R_2)=\mathbb{P}(R_1)\mathbb{P}(R_2|R_1)+\mathbb{P}(R_2|R_1^c)\mathbb{P}(R_1^c)=\frac{r}{r+b}=\mathbb{P}(R_1)
+$$
+
+Then we prove that $\mathbb{P}(R_n)\equiv \mathbb{P}(R_1)$
+
+Suppose it's true for $n$
+
+$$
+\begin{aligned}
+\mathbb{P}(R_{n+1}) & = \mathbb{P}(R_{n+1}|R_n^c)\mathbb{P(R_n)}+\mathbb{P}(R_{n+1}|R_n^c)\mathbb{P}(R_n^c)  \\
+& = \frac{r+s}{r+b+s} \frac{r}{r+b}+\frac{r}{r+b+s} \frac{b}{r+b}  \\
+& = \frac{r}{r+b}  \\
+\end{aligned}
+$$

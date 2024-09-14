@@ -342,3 +342,7 @@ $$
 
 1. 证 $\displaystyle \sum_{k=1}^{n}a_{i_k}b_{j_k}\le  (\sum_{i=1}^{\infty}a_i)(\sum_{j=1}^{\infty}b_j)$，取一个$\{ c_n \}$重排$\{ a_i b_j \}$，让$C_N$是$\{ c_n \}$前N项和，再取一个有限的$\{ a_i b_j \}$包含N项的$\{ c_n \}$
 2. 证 $\{ c_n \}$是$\{ a_i b_j \}$的一个重排，$\displaystyle C_N=\sum_{n=1}^{N}c_n$, 总是能够找到$N$, 让$\{ a_i b_j \}_{i\le N_1,j\le N_2}$在$\{ c_n \}_{n< N} $之中，又因为$C_N$有上界$AB$
+
+# 十五章：广义积分
+## 15.1
+
