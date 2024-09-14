@@ -51,6 +51,7 @@ $$
 $$
 
 我们将在后续课程进行证明。
+
 **例2**：考虑 $\sum \limits_ {n = 1} ^ \infty \frac{1}{n} $的收敛性：
 **思路**：证明 $\sum \limits_ {k = 1} ^ n \frac{1}{n}$无界。值得一提的是，$\sum \limits_ {n = 1} ^ \infty \frac{1}{n} \approx \ln n+r$
 
@@ -63,45 +64,47 @@ $$
 
 **定理（柯西收敛原理）**：$\sum \limits_ {n = 1} ^ \infty u_n $收敛当且仅当：
 $\forall \varepsilon > 0, \exists N > 0$,使得当$n \ge N$ 时，有$|\sum \limits_ {k = n+1} ^ {n+m} u_k| < \varepsilon, \quad \forall\  m \ge 1。$
+
 在上述式子，令$m = 1$，可知$u_n \to 0$，由此得到下述定理：
 **级数收敛的必要条件：**
+
 若$\sum \limits_ {n = 1} ^ \infty u_n $收敛，则$\lim\limits_{n\to \infty}u_n = 0$。
+
 **控制收敛定理**：
 设对$n \ge 1,|u_n| \le v_n$，如果$\sum \limits_ {n = 1} ^ \infty u_n $收敛，则$\sum \limits_ {n = 1} ^ \infty u_n $也收敛。
+
 **证明：** 由$\sum \limits_ {n = 1} ^ \infty v_n $收敛，应用柯西收敛原理，有：
 $\forall \varepsilon > 0, \exists N > 0$,使得当$n \ge N$ 时，有$v_{n+1} + v_{n+2} + \cdots + v_{n+m}  < \varepsilon , \quad \forall\  m \ge 1。$于是：
 
 $$
-|u_{n+1} + u_{n+2} + \cdots + u_{n+m} | < \varepsilon$$由柯西收敛原理可知，$\sum \limits_ {n = 1} ^ \infty u_n $收敛。
-**例3：** 考虑$\displaystyle\sum \limits_ {n = 1} ^ \infty \frac{\sin \sqrt{n}}{n^2} $的收敛性：
-思路：$\displaystyle\frac{\sin \sqrt{n}}{n^2} \le \frac{1}{n^2} $，收敛。
-**例4：**：考虑$\displaystyle\sum \limits_ {n = 1} ^ \infty q^n $的收敛性：
-$$\begin{align}
-\begin{aligned}pip insatll latex2sympy
-    S_n = \sum \limits_ {k = 1} ^ \infty q^k = \{n+1,\quad q = 1\\
-    \end{aligned}
-\end{align}
+|u_{n+1} + u_{n+2} + \cdots + u_{n+m} | < \varepsilon
 $$
+
+由柯西收敛原理可知，$\sum \limits_ {n = 1} ^ \infty u_n $收敛。
+
+**例3：** 考虑$\displaystyle\sum \limits_ {n = 1} ^ \infty \frac{\sin \sqrt{n}}{n^2} $的收敛性：
+
+思路：$\displaystyle\frac{\sin \sqrt{n}}{n^2} \le \frac{1}{n^2} $，收敛。
+
+**例4：**：考虑$\displaystyle\sum_{n = 1}^{\infty} q^n$的收敛性：
 
 **级数的四则运算：** 若$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n ,\sum \limits_ {n = 1} ^ \infty u_n $收敛,则：
 
 * $\displaystyle\sum \limits_ {n = 1} ^ \infty (u_n + v_n) = \sum \limits_ {n = 1} ^ \infty u_n + \sum \limits_ {n = 1} ^ \infty v_n$
 * $\displaystyle\sum \limits_ {n = 1} ^ \infty C u_n  = C \sum \limits_ {n = 1} ^ \infty u_n $
-* $\displaystyle\sum \limits_ {n = 1} ^ \infty v_n u_n  = \sum \limits_ {n = 1} ^ \infty v_n \sum \limits_ {n = 1} ^ \infty u_n ?$后续课程将对此进行说明。
+* $\displaystyle\sum \limits_ {n = 1} ^ \infty v_n u_n  = \sum \limits_ {n = 1} ^ \infty v_n \sum \limits_ {n = 1} ^ \infty u_n ?$(后续课程将对此进行说明。)
 
-和数列极限类似，我们**更关注**$\displaystyle\sum \limits_ {n = N+1} ^ \infty u_n $的收敛性，即只关注后续无穷项是否能控制，而对前几项不很关心。
+和数列极限类似，我们**更关注**$\displaystyle\sum \limits_ {n = N+1} ^ \infty u_n$的收敛性，即只关注后续无穷项是否能控制，而对前几项不很关心。
 
 ## 14.2正项级数
 
 **例1**：考虑$\displaystyle\sum \limits_ {n = 1} ^ \infty \frac{1}{n^p} $的收敛性：
 
 $$
-\begin{align}
 \begin{aligned}
     &p > 2,&\frac{1}{n^p} < \frac{1}{n^2}，收敛\\
     &0< p < 1,&\frac{1}{n^p} \ge \frac{1}{n}，发散\\
     \end{aligned}
-\end{align}
 $$
 
 当$1<p<2$时，令$f(x) = \frac{1}{x^p}$，考虑:
@@ -116,9 +119,9 @@ $$
 A_n =\int \limits_1 ^ n f(x)\ {\rm{d}}x
 $$
 
-则$\displaystyle\sum \limits_ {n =1} ^ \infty f(n) $与$\displaystyle\{A_n\}$同时收敛，同时发散。
+则$\displaystyle\sum \limits_ {n =1} ^ \infty f(n)$与$\displaystyle\{A_n\}$同时收敛，同时发散。
 
-**例2：** 考虑$\displaystyle \sum \limits_ {n = 3} ^ \infty \frac{1}{n(\ln n) ^ p} $的收敛性：
+**例2：** 考虑$\displaystyle \sum \limits_ {n = 3} ^ \infty \frac{1}{n(\ln n) ^ p}$的收敛性：
 思路：
 
 $$
@@ -134,15 +137,15 @@ $$
 回忆：
 对$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$ 与$\displaystyle\sum \limits_ {n = 1} ^ \infty v_n$，若均为正向级数，且$u_n \le v_n$，则二者同时收敛，同时发散。
 
-**定理1:** 设对$ n \ge 1,u_n \ge 0, v_n > 0$,且
+**定理1:** 设对$n \ge 1,u_n \ge 0, v_n > 0$,且
 
 $$
 \lim _{n \to \infty} \frac{u_n}{v_n} = l \in [0,+\infty)
 $$
 
 （1）若$0 < l < + \infty$，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$ 与$\displaystyle\sum \limits_ {n = 1} ^ \infty v_n$同时收敛与发散。
-（2）若$l = 0$,$\displaystyle\sum \limits_ {n = 1} ^ \infty v_n$收敛，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛。
-（3）若$l \to + \infty$, $\displaystyle\sum \limits_ {n = 1} ^ \infty v_n$发散，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$发散。
+（2）若$l = 0$,$\displaystyle\sum \limits_ {n = 1} ^ \infty v_n$收敛，则 $\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$ 收敛。
+（3）若$l \to + \infty$, $\displaystyle\sum \limits_ {n = 1} ^ \infty v_n$发散，则 $\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$发散。
 
 证明：
 (1)
@@ -249,14 +252,12 @@ $$
 
 ## 14.4一般项级数
 
-**定理1：** 若$ \displaystyle\sum \limits_ {n = 1} ^ \infty
-|u_n|$收敛，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛。
+**定理1：** 若$\displaystyle\sum \limits_ {n = 1} ^ \infty|u_n|$收敛，则$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛。
+
 **定义1：**
 
-* 若$\displaystyle\sum \limits_ {n = 1} ^ \infty
-  |u_n|$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$绝对收敛。
-* 若$\displaystyle\sum \limits_ {n = 1} ^ \infty
-  |u_n|$发散，$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$收敛，则称$\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$条件收敛。
+* 若 $\displaystyle\sum \limits_ {n = 1} ^ \infty|u_n|$, $\displaystyle\sum \limits_ {n = 1} ^ \infty u_n$绝对收敛。
+* 若 $\displaystyle\sum \limits_ {n = 1} ^ \infty|u_n|$发散, $\displaystyle \sum_{n=1}^{\infty}u_n$收敛，则称$\displaystyle\sum_{n=1}^{\infty}u_n$条件收敛。
 
 例如，$\displaystyle\sum \limits_ {n = 1} ^ \infty \frac{(-1)^{n + 1}}{n}$，对于$u_{n + 1} + u_{n + 2} + \cdots +u_{n + p} $：
 
@@ -291,7 +292,7 @@ $$
 $\displaystyle \sum_{n=1}^{\infty}\frac{\sin nx}{n^p}$在 $0<p\le 1$时条件收敛。
 
 $$
-|\sin nx|/n^p\ge \ \frac{\sin^2 nx}{n^p}=(\frac{1}{n^p})(\rm{divergent})-\frac{\cos 2nx}{n^p} \rm{(convegent)}
+|\sin nx|/n^p\ge \ \frac{\sin^2 nx}{n^p}=(\frac{1}{n^p})\text{(divergent)}-\frac{\cos 2nx}{n^p} \text{(convegent)}
 $$
 
 *2024/9/9*
@@ -341,8 +342,21 @@ $$
 设${a_i},{b_j}$非负
 
 1. 证 $\displaystyle \sum_{k=1}^{n}a_{i_k}b_{j_k}\le  (\sum_{i=1}^{\infty}a_i)(\sum_{j=1}^{\infty}b_j)$，取一个$\{ c_n \}$重排$\{ a_i b_j \}$，让$C_N$是$\{ c_n \}$前N项和，再取一个有限的$\{ a_i b_j \}$包含N项的$\{ c_n \}$
-2. 证 $\{ c_n \}$是$\{ a_i b_j \}$的一个重排，$\displaystyle C_N=\sum_{n=1}^{N}c_n$, 总是能够找到$N$, 让$\{ a_i b_j \}_{i\le N_1,j\le N_2}$在$\{ c_n \}_{n< N} $之中，又因为$C_N$有上界$AB$
+2. 证 $\{ c_n \}$是 $\{ a_i b_j \}$的一个重排，$\displaystyle C_N=\sum_{n=1}^{N}c_n$, 总是能够找到$N$, 让$\{ a_i b_j \}_{i\le N_1,j\le N_2}$在$\{ c_n \}_{n< N} $之中，又因为$C_N$有上界$AB$
 
 # 十五章：广义积分
-## 15.1
 
+## 15.1 无限区间的广义积分
+
+**Definition** $\forall A>0 ,f(x)$在  $\displaystyle [a,A]$上可积，且极限：
+
+$$
+\lim_{A \to +\infty}\int_{a}^{A}f(x)  \mathrm{d}x
+$$
+
+存在，则称$f(x)$在$[a,+\infty)$广义（反常）积分收敛。
+
+$$
+
+
+$$
