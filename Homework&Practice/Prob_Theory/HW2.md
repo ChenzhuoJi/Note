@@ -5,19 +5,19 @@
 **(a)**
 
 $$
-\mathbb{P}(A\cup B)=1-\mathbb{P}(A^c\cup B^c)=0.65
+\mathbb{P}(A\cup B)=0.8
 $$
 
 **(b)**
 
 $$
-\mathbb{P}(A\cap B^c)=\mathbb{P}(A)\mathbb{P}(B^c)=0.15
+\mathbb{P}(A\cap B^c)=\mathbb{P}(A)\mathbb{P}(B^c)= 0.3
 $$
 
 **(c)**
 
 $$
-\mathbb{P}(A\cup B)=0.15
+\mathbb{P}(A\cup B)=0
 $$
 
 ## Problem 2
@@ -26,20 +26,22 @@ Let $|S|=100$.
 
 **(a)** Let $E_1$ be the event that the student chosen is not in any of the language classes, and $|E_1|$ be the number of these student satisfying $E_1$
 
+The total people: |S|=28+26+16-12-4-6+2=50
+
 $$
-\mathbb{P}(E_1)=\frac{|E_1|}{|S|}=\frac{34}{100}= 0.34
+\mathbb{P}(E_1)=\frac{|E_1|}{|S|}=\frac{40}{100}=0.5
 $$
 
 **(b)** Let $E_2$ be the event that the student chosen is taking exactly one language class, and $|E_2|$ be the number of these student satisfying $E_2$
 
 $$
-\mathbb{P}(E_2)=\frac{|E_2|}{|S|}=\frac{66-2-10-2-4}{100}=0.48
+\mathbb{P}(E_2)=\frac{|E_2|}{|S|}=\frac{12+6+4}{100}=\frac{11}{50}
 $$
 
 **(c)** Let $E_3$ be the event that the two students chosen at least 1 is taking 1 language class.
 
 $$
-\mathbb{P}(E_3)=1-\mathbb{P}(E_3^c)=1-0.52^2=0.7296
+\mathbb{P}(E_3)=1-\mathbb{P}(E_3^c)=1-0.5^2=0.25
 $$
 
 ## Problem 3
