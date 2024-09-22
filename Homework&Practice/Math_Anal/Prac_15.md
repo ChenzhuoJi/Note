@@ -80,7 +80,7 @@ $\forall \epsilon>0$
 未必，我们考虑$\displaystyle f(x)=g(x)=\frac{\sin x}{\sqrt{x}}$
 
 $$
-\boxed{\int_{1}^{+\infty}\frac{\sin x}{x^p}  \mathrm{d}x\ \begin{cases} \text{绝对收敛}, & p>1 \\ \text{条件收敛}, &0<p\le 1 \\ \text{发散} , & p=0 \\ \text{发散} , &p<0 \end{cases}}
+\boxed{\int_{1}^{+\infty}\frac{\sin x}{x^p}  \mathrm{d}x\ \begin{cases} \text{绝对收敛}, & p>1 \\ \text{条件收敛}, &0<p\le 1 \\ \text{发散} , & p\le 0 \end{cases}}
 $$
 
 $\displaystyle \int_{a}^{+\infty}\frac{\sin x}{\sqrt{x}}  \mathrm{d}x$收敛，但是 $\displaystyle \int_{a}^{+\infty}\frac{\sin ^2x}{x}  \mathrm{d}x=\int_{a}^{+\infty}\frac{1}{2x}-\frac{\cos 2x}{2x}  \mathrm{d}x$ 时发散的。
@@ -94,7 +94,9 @@ $\displaystyle \int_{a}^{+\infty}\frac{\sin x}{\sqrt{x}}  \mathrm{d}x$收敛，�
 $$
 \displaystyle -\int_{0}^{A}  \frac{\mathrm{d}x}{f(x)+f'(x)}+\int_{0}^{A}\frac{\mathrm{d}x}{f(x)}=\int_{0}^{A} \frac{f'(x)}{[f(x)+f'(x)]f(x)}  \mathrm{d}x\le \int_{0}^{A}    \left[ \frac{f'(x)}{f^2(x)} \right] \mathrm{d}x=\frac{1}{f(A)}-\frac{1}{f(0)}
 $$
+
 即:
+
 $$
 0\le \int_{0}^{+\infty}\frac{1}{f(x)}  \mathrm{d}x\le \frac{1}{f(A)}-\frac{1}{f(0)}=\int_{0}^{+\infty}\frac{1}{f(x)+f'(x)}  \mathrm{d}x\le \int_{0}^{+\infty}\frac{1}{f(x)+f'(x)}  \mathrm{d}x
 $$
