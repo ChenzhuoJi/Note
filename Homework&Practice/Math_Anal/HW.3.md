@@ -53,7 +53,9 @@ $$
 
 设$A\in [A_n,A_{n+1}]$,那么$\displaystyle \int_{A_n}^{A}e^{-x}|\sin x|  \mathrm{d}x=\left.(-1)^{n+1}\frac{e^{-x}(\sin x+\cos x)}{2}\right|^A_{A_n}\to 0 ,n\to \infty$
 
-## 15.2.1
+所以原积分值为$\displaystyle \frac{e^{-\pi +1}}{e-1}$
+
+## 15.1.2.(1)
 
 $$
 \int_{0}^{A}\frac{1}{1+x|\sin x|}  \mathrm{d}x< \int_{0}^{A}\frac{1}{1+x}  \mathrm{d}x\to +\infty,A\to +\infty
@@ -61,11 +63,11 @@ $$
 
 所以原积分发散。
 
-## 15.2.2
+## 15.1.2.(2)
 
 考虑到$x^2e^{-x^2}$是偶函数，所以只需考虑$\displaystyle \int_{0}^{+\infty} x^2e^{-x^2} \mathrm{d}x$，又因为$e^{-x^2}$是$\displaystyle \frac{1}{x^4}$的低阶无穷小，所以$x^2e^{-x^2}$就是$\displaystyle \frac{1}{x^2}$的高阶无穷小。从而原级数是收敛的。
 
-## 15.2.3
+## 15.1.2.(3)
 
 $$
 \int_{-\infty}^{+\infty}\frac{x}{e^x+x^4}  \mathrm{d}x\le\int_{-1}^{+\infty}\left|\frac{x}{e^x+x^4}\right|  \mathrm{d}x+\int_{-\infty}^{-1}\left|\frac{x}{e^x+x^4} \right|\mathrm{d}x\le \int_{-1}^{+\infty}\left|\frac{x}{\frac{1}{e}+x^4}\right|  \mathrm{d}x+\int_{-\infty}^{-1}-\frac{1}{x^3}  \mathrm{d}x
@@ -79,7 +81,7 @@ $$
 
 上述的值为一个有界值，并且$\frac{1}{x^3}$是广义积分收敛的，所以原积分收敛。
 
-## 15.2.4
+## 15.1.2.(4)
 
 注意到：
 
@@ -89,7 +91,7 @@ $$
 
 所以$\displaystyle \frac{\frac{\pi}{2}-\arctan x}{2}$和$\frac{1}{x}$是同阶的当$x\to +\infty$时，所以原被积函数就和$\frac{1}{x^2}$同阶，所以原积分收敛。
 
-## 15.2.5
+## 15.1.2.(5)
 
 注意到：
 
@@ -99,7 +101,7 @@ $$
 
 所以原积分发散。
 
-## 15.3.1
+## 15.1.3.(1)
 
 由于$\ln x$对于$\forall q>0$, 是$x^q$的低阶无穷小,所以下列结论是显然的：
 
@@ -108,7 +110,7 @@ $$
 
 考虑$p=1$时，由于$\displaystyle \frac{\ln x}{x}>\frac{1}{x},x>e$时，所以原积分发散
 
-## 15.3.2
+## 15.1.3.(2)
 
 由于$p,q>0$，所以$\displaystyle \frac{x^p}{1+x^q}\sim \frac{x^p}{x^q}$
 

@@ -100,3 +100,11 @@ $$
 $$
 0\le \int_{0}^{+\infty}\frac{1}{f(x)}  \mathrm{d}x\le \frac{1}{f(A)}-\frac{1}{f(0)}=\int_{0}^{+\infty}\frac{1}{f(x)+f'(x)}  \mathrm{d}x\le \int_{0}^{+\infty}\frac{1}{f(x)+f'(x)}  \mathrm{d}x
 $$
+
+## 月考
+$\displaystyle \int_{0}^{+\infty}\sin x^2  \mathrm{d}x$的敛散性。
+
+$\displaystyle t=x^2,\mathrm{d}x=\frac{\mathrm{d}t}{2x}=\frac{\mathrm{d}t}{2\sqrt{t}}$
+$$
+\int_{0}^{+\infty}\sin x^2  \mathrm{d}x=\int_{0}^{+\infty}\frac{\sin t}{2\sqrt{t}}  \mathrm{d}t
+$$

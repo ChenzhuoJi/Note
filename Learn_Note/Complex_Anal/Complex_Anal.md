@@ -66,3 +66,9 @@ $$
 $$
 \displaystyle \frac{\partial f}{\partial z}=\frac{\partial f}{\partial x}\frac{\partial x}{\partial z}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial z}
 $$
+
+### 初等解析函数
+
+$\displaystyle \sin z=\frac{1}{2i}(e^{iz}-e^{-iz}),\cos z=\frac{1}{2}(e^{iz}+e^{-iz})$
+$\displaystyle \sin z=\sin x\ch y+i\cos x\sh y,\sin^2 z=\sin^2 x+\sh^2 y$
+$\sin z,\cos z$都是无界的
