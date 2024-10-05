@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        input { margin-bottom: 10px; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Signup Form</h1>
+    <form id="signupForm">
+        <input type="text" id="username" placeholder="Username">
+        <span class="error" id="usernameError"></span><br>
+        <input type="password" id="password" placeholder="Password">
+        <span class="error" id="passwordError"></span><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            let isValid = true;
+            if (document.getElementById('username').value === '') {
+                document.getElementById('usernameError').innerText = "Username is required.";
+                isValid = false;
+            } else {
+                document.getElementById('usernameError').innerText = "";
+            }
+            if (document.getElementById('password').value === '') {
+                document.getElementById('passwordError').innerText = "Password is required.";
+                isValid = false;
+            } else {
+                document.getElementById('passwordError').innerText = "";
+            }
+            if (!isValid) event.preventDefault();
+        });
+    </script>
+</body>
+</html>
