@@ -173,3 +173,8 @@ Traditionally, the term 'form' has referred to a printed document that contains 
 * Flash is not supported on iPhone or iPad.
 * HTML5 introduces new `<video>` and `<audio>` elements for adding video and audio to web pages, but these are only supported in the latest browsers.
 * Browsers that support the HTML5 elements do not all support the same video and audio formats, so you need to supply your files in different formats to ensure that everyone can see/hear them.
+
+## CSS Text
+* Size and typeface of text
+* Bold, italics, capitals, underlines
+Spacing between lines, words, and letters
