@@ -983,3 +983,125 @@ SQL 语言与 Web 技术紧密结合，通过前端和后端技术的协同工�
 
 - **`form`** 元素是 HTML 中用于提交用户数据的核心元素，结合各种属性（如 `action`、`method`、`enctype`），可以实现数据提交、验证、文件上传等功能。
 - 表单可以通过前端和后端的协同工作，提供丰富的交互功能，如用户登录、注册、文件上传等操作。
+
+要在 HTML 中实现随机从数据库中抽取名言并动态显示在页面中，你可以结合 JavaScript 和后台技术（例如 Node.js、Python、PHP 等）来完成这个功能。大体上实现的步骤如下：
+
+### 1. **准备名言数据库**
+名言数据库可以是服务器上的一个数据库（例如 MySQL、MongoDB），也可以是一个简单的 JSON 文件，用来存储名言列表。为了简单起见，这里我们假设使用 JSON 文件作为数据库。
+
+**名言数据库（quotes.json）示例**：
+```json
+[
+    {
+        "quote": "The only limit to our realization of tomorrow is our doubts of today.",
+        "author": "Franklin D. Roosevelt"
+    },
+    {
+        "quote": "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        "author": "Winston Churchill"
+    },
+    {
+        "quote": "Do not go where the path may lead, go instead where there is no path and leave a trail.",
+        "author": "Ralph Waldo Emerson"
+    }
+]
+```
+
+### 2. **创建HTML容器**
+在 HTML 文件中，创建一个用于显示名言和作者的容器。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote</title>
+    <style>
+        #quoteContainer {
+            font-style: italic;
+            border-left: 5px solid #ccc;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        #author {
+            text-align: right;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="quoteContainer">
+        <p id="quote"></p>
+        <p id="author"></p>
+    </div>
+
+    <script src="quote.js"></script>
+</body>
+</html>
+```
+
+### 3. **编写JavaScript代码**
+在 `quote.js` 文件中编写 JavaScript 来实现以下功能：
+- 向服务器请求名言数据（如 `quotes.json`）。
+- 随机选择一个名言。
+- 动态更新页面中的名言内容。
+
+```javascript
+// quote.js
+document.addEventListener("DOMContentLoaded", function() {
+    // Fetch the quote database
+    fetch("quotes.json")
+        .then(response => response.json())
+        .then(quotes => {
+            // Get a random quote
+            const today = new Date().getDate(); // Get the day of the month
+            const randomIndex = today % quotes.length; // Use day to pick a quote
+            const quoteObj = quotes[randomIndex];
+
+            // Update the HTML content
+            document.getElementById("quote").innerText = quoteObj.quote;
+            document.getElementById("author").innerText = "- " + quoteObj.author;
+        })
+        .catch(error => console.error("Error fetching quotes: ", error));
+});
+```
+
+### 4. **服务器端准备（可选）**
+如果你的名言数据在服务器上的数据库中，你需要服务器端代码来从数据库中获取名言。例如，使用 Node.js 或 PHP 从数据库中查询名言，并返回给前端。
+
+#### 使用 Node.js 的简单示例：
+```javascript
+const express = require('express');
+const app = express();
+const quotes = require('./quotes.json'); // Load the quotes from a JSON file
+
+app.get('/quote', (req, res) => {
+    const today = new Date().getDate();
+    const randomIndex = today % quotes.length;
+    res.json(quotes[randomIndex]); // Send a random quote
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+```
+
+前端 `fetch` 请求只需要改为从 `/quote` 路径获取数据：
+```javascript
+fetch("/quote")
+    .then(response => response.json())
+    .then(quoteObj => {
+        document.getElementById("quote").innerText = quoteObj.quote;
+        document.getElementById("author").innerText = "- " + quoteObj.author;
+    })
+    .catch(error => console.error("Error fetching quote: ", error));
+```
+
+### 5. **总结**
+- **HTML** 负责创建页面结构，展示名言。
+- **JavaScript** 用于从服务器获取数据（在本例中是 `quotes.json`），并随机选择一个名言来展示。
+- 如果你有服务器端处理能力（如 Node.js 或 PHP），可以将名言存储在数据库中，前端通过 `fetch` 请求获取最新名言。
+
+这样，每次用户打开网页时，页面都会随机从名言库中显示一个名言，或者你可以用日期来控制名言每日更换。

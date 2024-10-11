@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test1</title>
+        <style>
+            body {
+                background-color: antiquewhite;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: small;
+            }
+            h1 {
+                font-size: xx-large;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                text-align: center;
+                border: 2px #ccc;
+            }
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;  /* 定义两列布局 */
+                gap: 10px;  /* 设置列间距 */
+            }
+            p {
+                padding: 10%;
+                height: auto;
+                border: 1px solid #ccc;
+                color:rgb(75, 143, 143)
+                
+            }
+            p.empty {
+                height: 500px;
+                
+            }
+            p:nth-child(odd) {
+                grid-column: 1;  /* 奇数段落放在左列 */
+            }
+            p:nth-child(even) {
+                grid-column: 2;  /* 偶数段落放在右列 */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Three Articles</h1>
+        <div class="container">
+             
+                <p>War has been an intrinsic part of human history, shaping civilizations and altering the course of nations. While it is often waged in the name of justice, freedom, or survival, the toll it takes on society is immense. On the battlefield, soldiers face the brutal reality of death and destruction, risking their lives in service to their country. But the impact of war extends far beyond the front lines. Families are torn apart, with many losing loved ones to the violence or becoming refugees displaced from their homes. The infrastructure of countries is often decimated, with cities reduced to rubble and economies collapsing under the weight of conflict. In the aftermath, rebuilding takes years, if not decades, and the scars left behind, both physical and emotional, can linger for generations. War also affects the mental health of those involved, from soldiers suffering from post-traumatic stress disorder to civilians traumatized by the devastation surrounding them. While the immediate consequences of war are clear—destruction, loss of life, and chaos—the long-term societal impacts are equally profound, influencing politics, economies, and cultural values. No matter how necessary or just a war may seem, its repercussions are far-reaching, reshaping the world in ways that are often unpredictable and irreversible.</p>
+                <p class="empty"></p>
+                <p>There is something profoundly peaceful about being surrounded by nature, where the chaos of daily life seems to fade away, leaving only the gentle rhythms of the natural world. Picture a serene landscape: rolling hills covered in lush greenery stretch out beneath a cloudless sky, the sunlight casting a golden hue over the scene. A gentle breeze rustles through the leaves of towering trees, and the soft chirping of birds provides a soothing soundtrack to the calm. In the distance, a crystal-clear stream meanders through the valley, its waters sparkling as they catch the light. The air is crisp and clean, carrying with it the earthy scent of pine and damp soil. Time seems to slow in a place like this, as if nature itself is urging you to pause and take in the beauty of your surroundings. The simplicity of it all—no bustling city noise, no distractions—creates a perfect environment for reflection and mindfulness. Whether it’s the majesty of a mountain range, the stillness of a lake at dawn, or the vibrant colors of a sunset, nature has a way of grounding us, reminding us of the vastness of the world and our small but meaningful place within it.</p>
+                <p>The rapid advancement of technology has fundamentally reshaped the way we live, work, and interact with the world around us. In just a few decades, we've seen remarkable innovations that were once the stuff of science fiction become everyday realities. Smartphones, for example, have revolutionized communication, placing the power of the internet, GPS, and social media in the palm of our hands. At the same time, advances in artificial intelligence and machine learning are transforming industries ranging from healthcare to finance. Algorithms can now analyze vast amounts of data in seconds, helping doctors diagnose diseases, engineers optimize systems, and companies make data-driven decisions. The rise of automation, including robotics in manufacturing and self-driving cars, is also changing how we approach work and transportation. While technology has brought many conveniences and efficiencies, it has also raised important ethical and societal questions. Issues like data privacy, cybersecurity, and the potential displacement of workers due to automation are becoming increasingly pressing. Moreover, the constant connectivity provided by the internet and social media, while empowering, can also contribute to stress and information overload. As technology continues to evolve at an exponential rate, it challenges us to find a balance between leveraging its benefits and addressing the new challenges it creates for society.</p>
+        </div>
+        
+    </body>
+   
+</html>

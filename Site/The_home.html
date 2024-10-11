@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HeyBird</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Ma+Shan+Zheng&family=Sixtyfour+Convergence:SCAN,XELA,YELA@5,-100..100,-77&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+        <!-- 上面的字体有"Zhi Mang Xing 和 Ma Shan Zheng" -->
+        <style>
+            .sixtyfour-convergence {
+                font-family: "Sixtyfour Convergence", serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+                font-variation-settings:
+                  "BLED" 0,
+                  "SCAN" 5,
+                  "XELA" 10,
+                  "YELA" -77;
+              }
+              
+            .karla {
+                font-family: "Karla", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 300;
+                font-style: normal;
+              }
+            .edu-au-vic-wa-nt-dots-custom {
+                font-family: "Edu AU VIC WA NT Dots",cursive;
+                font-optical-sizing: auto;
+                font-weight: 700; /* 字体权重可以是400到700 */
+                font-style: normal;
+              }
+
+            .zhi-mang-xing-regular {
+                font-family: "Zhi Mang Xing", serif;
+                font-weight: 400;
+                font-style: normal;
+              }
+            
+            .zcool-xiaowei-regular {
+                font-family: "ZCOOL XiaoWei", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+              
+            .quicksand {
+                font-family: "Quicksand", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+              }
+            @font-face {
+                font-family: "MSZ"; /* 自定义字体的名称 */
+                src: url(D:\Notes_work\Site\fonts\Ma_Shan_Zheng\MaShanZheng-Regular.ttf) format('truetype'); /* 字体的路径和格式 */
+                font-weight: normal;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: "font64";
+                src: url("Site/fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.ttf") format('truetype'),
+                url("Site/fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.woff2") format("woff2"),
+                url("Site/fonts/Sixtyfour_Convergence/static/SixtyfourConvergence-Regular.woff") format("woff");
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            body {
+                background-color: rgb(255, 255, 255);
+                font-family:'Courier New', Courier, monospace;
+            }
+            h1.Name {
+                padding-top: 20px;
+                font-family: "Edu AU VIC WA NT Dots";
+                font-style: bold;
+                text-align: center;
+                line-height: 0%;
+            }
+            .home_container {
+                text-align: center;
+                margin-top: 50px;
+                
+            }
+            .home_container img {
+                max-width: 100%;
+                height: 200px;    
+                width: 400px;
+                border:2px solid rgb(255, 255, 255);
+            }
+            .home_container p {
+                margin-top: 10px;
+                font-size: 18px;
+                color:black
+            }
+            .home_container li {
+                display: inline;
+                padding:20px;
+            }
+            .home_container nav {
+                padding:10px
+            }
+            .home_container nav ul {
+                list-style-type: none; /* 移除默认的列表样式 */
+                margin: 0;
+                padding: 0;
+                display: flex; /* 使用Flexbox布局 */
+                justify-content: center; /* 水平居中 */
+                
+            }
+            .home_container nav ul li {
+                float:center;
+            }
+            .home_container nav ul li a {
+                display: block; /* 链接变成块级元素 */
+                color: rgb(13, 0, 0);
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none; /* 移除下划线 */
+                font-size: 20px;
+                font-family: "Quicksand";
+            }
+            .home_container nav ul li a:hover {
+                background-color: rgba(194, 76, 76, 0.103);
+            }
+            .Quote {
+                display: flex;
+                justify-content: center; /* 水平居中 */
+                align-items: center; /* 垂直居中 */
+                min-width: 500px;
+                max-width: 600px;
+                width: auto;
+                height: 200px;
+                margin-left: auto;
+                margin-right: auto;
+                font-family: "ZCOOL XiaoWei";
+                font-size: 18px;
+                border-right: 2px solid rgba(156, 52, 52, 0.541);
+                border-bottom: 2px solid rgba(156, 52, 52, 0.483);
+                border-radius: 30%;
+            }
+            .Quote blockquote{
+                position: relative;
+                padding: 20px;
+                
+
+            }
+            .Quote cite {
+                display: block;
+                text-align: right;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="home_container">
+        <img src="images/logo.png" alt="LOGO">
+        <h1 class="Name" >The world of wq </h1>
+        <nav>
+            <ul>
+                <li><a href="#home"><strong>Home</strong></a></li>
+                <li><a href="#about"><strong>About Me</strong></a></li>
+                <li><a href="#services"><strong>Service</strong></a></li>
+                <li><a href="#contact"><strong>Contact Me</strong></a></li>
+            </ul>
+        </nav>
+        <div class="Quote">
+        人生到处知何似，应似飞鸿踏雪泥.
+        <cite>——【宋】苏轼</cite>
+        </div>
+    </div>
+    </body>
+</html>
