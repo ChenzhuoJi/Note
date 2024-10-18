@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MATLAB</title>
+        <link rel="stylesheet" href="../../../css/typography.css">
+        <link rel="stylesheet" href="../../../css/mathstyle.css">
+        <script src="../../../script/highlight.js"></script>
+        <script src="../../../script/codecopy.js"></script>
+        <script src="../../../script/math.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../../about.html">About Me</a></li>
+                    <li><a href="../../../articles/index.html">Articles</a></li>
+                    <li><a href="../../../services.html">Services</a></li>
+                    <li><a href="../../../contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        <header>
+        <div class="arcol">
+            <article>
+                <h1><span class="en">MATLAB</span> 作业 4 </h1>
+                <h2>Problem 1 </h2> 
+                <p>写一个名称为<span class="inl-code"> coinTest.m </span>的脚本，模拟 5000 次抛掷硬币的结果为正面的概率。</p>
+                <p>首先命名<span class="inl-code"> numFilps=5000 </span> 作为我们的抛掷总数，然后<span class="inl-code"> rand() </span>函数来创建一个 5000 的随机数组，之后我们可以用两种方式来解决5000次内正面朝上的分布，一种是常见的<span class="inl-code"> for </span>循环，另一种我们可以用函数 <span class="inl-code"> cumsum </span>来计算，此函数用于返回一个新数组，值为原数组中该位置之前所有数的和，也就是说如果把正面看成 1，反面看成 0，那么这样一个布尔值数组就可以用<span class="inl-code"> cumsum </span>来计算 1 的分布。</p>
+                <p>这样就获得了一个数组：<span class="inl-code"> sHead </span> 每个位置的数是该位置之前正面朝上的次数，除以该位置的指标，就可以计算出到该位置时的正面朝上的概率，用 Matlab 中数组除法的语法：<span class="inl-code">pHead=sHead ./ (1 : numFilps)</span> 就可以计算出一个概率分布数组。</p>
+                <div class="code-cont">
+                    <div class="code-title">
+                        <span>matlab</span>
+                        <button class="copy-button" onclick="copyCode()">复制代码</button>
+                    </div>
+                    <pre>
+                        <code>
+numFlips = 5000 ;
+coinFlips = rand(1,5000) > 0.5 ;
+sHead = cumsum(coinFlips) ;
+pHead = sHead ./ (1 : numFlips) ;
+expectedValue = 0.5;  
+
+figure;  
+plot(1:numFlips, pHeads, '-b', 'LineWidth', 1.5);  
+hold on;  
+
+yline(expectedValue, '--r', 'LineWidth', 1.5);  
+  
+title('Running Estimate of the Probability of Getting Heads');  
+xlabel('Number of Coin Flips');  
+ylabel('Probability of Getting Heads');  
+legend('Running Estimate', 'Expected Value (0.5)');  
+grid on;
+
+                        </code>
+                    </pre>
+                </div>
+                <div class="img-cont">
+                    <div class="img-title">matlab 示意图</div>
+                    <img src="../../../images/illustrations/coinflips.png" alt="matlab 示意图">
+                </div>
+            </article>
+        </div>
+    </body>

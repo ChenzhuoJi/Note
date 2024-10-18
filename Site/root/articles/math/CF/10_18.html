@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>10 月 18 日复变函数学习笔记</title>
+        <link rel="stylesheet" href="../../../css/typography.css">
+        <link rel="stylesheet" href="../../../css/mathstyle.css">
+        <script src="../../../js/math.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../../about.html">About Me</a></li>
+                    <li><a href="../../../articles/index.html">Articles</a></li>
+                    <li><a href="../../../services.html">Services</a></li>
+                    <li><a href="../../../contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="arcol">
+            <article>
+                <h1>10 月 18 日复变函数学习笔记</h1>
+                <h2>Cauthy 积分公式</h2>
+                <div class="thm">
+                    <p>设简单闭路径 $\Gamma$ 的内部为$D$，$f\in H(\bar{D})$ ，则对于任何的 $z\in D$，都有：
+                    $$
+                    f(\omega)=\frac{1}{2\pi i}\int_{\Gamma}\frac{f(z)}{z-\omega}\mathrm{d}z
+                    $$</p>
+                    <p>此外，$f$ 在 $D$ 上还无穷次可导，并且对任何的 $n\ge 0$ 及 $z\in D$ 有
+                        $$
+                        f^{(n)}(\omega)=\frac{n!}{2\pi i}\int_{\Gamma}\frac{f(z)\mathrm{d}z}{(\omega-z)^{n+1}}
+                        $$
+                    </p>
+                </div>
+                <div class="proof">
+                    
+                </div>
+                <div class="thm">
+                    (Morea) 若 $f(z)$ 在开域 $D$ 中连续，并且对 $D$ 中任意闭路径 $\Gamma$ 都有 $\displastyle \int_{\Gamma}f(z)\mathrm{d}z=0$，则有 $f\in H(\bar{D})$
+                </div>
+                
+            </article>
+        </div>

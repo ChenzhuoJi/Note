@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>概率论作业 5</title>
+        <link rel="stylesheet" href="../../../css/typography.css">
+        <link rel="stylesheet" href="../../../css/mathstyle.css">
+        <script src="../../../js/math.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../../about.html">About Me</a></li>
+                    <li><a href="../../../articles/index.html">Articles</a></li>
+                    <li><a href="../../../services.html">Services</a></li>
+                    <li><a href="../../../contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="arcol">
+            <article>
+                <h1>概率论作业 5</h1>
+                <h3>P1</h3>
+                <div class="ilic">
+                <p>
+                    Suppose that a biased coin that lands on heads with probability <em>p</em> is flipped 10 times. Given that a total of 6 heads results, find the conditional probability that the first 3 outcomes are:
+                </p>
+                <ol>
+                    <li><em>h, t, t</em> (meaning that the first flip results in heads, the second in tails, and the third in tails);</li>
+                    <li><em>t, h, t</em>.</li>
+                </ol>
+                </div>
+                <div class="sol">
+                    设 $E$ 是事件：有六次正面朝上。$F_1,F_2$ 分别是 1. 和 2. 对应的事件
+
+                    1. 前三次的结果是「正反反」时，那么后七次需要有五次正面朝上。
+                    $$
+                    
+                    $$
+                </div>
+                <div class="ilic">
+                    <p>2. The number of times that a person contracts a cold in a given year is a Poisson random variable with parameter \( \lambda = 5 \). Suppose that a new wonder drug (based on large quantities of vitamin C) has just been marketed that reduces the Poisson parameter to \( \lambda = 3 \) for 75 percent of the population. For the other 25 percent of the population, the drug has no appreciable effect on colds. If an individual tries the drug for a year and has 2 colds in that time, how likely is it that the drug is beneficial for him or her?</p>
+                </div>
+                <div class="sol">
+                    <p>令 $E$ 是事件：「药对这个人有效」，$C$ 是事件：「这个人一年内的了两次感冒」</p>
+                    <p>
+                        $$
+                        P(C|E)=P(X=2)=e^{-3}\times \frac{9}{2!}=\frac{9}{2}e^{-3}
+                        $$
+                        $$
+                        P(C|E^c)=e^{-5}\times \frac{25}{2!}=\frac{25}{2}e^{-5}
+                        $$
+                        $$
+                        P(E|C)=\frac{P(C|E)P(E)}{P(C|E)P(E)+P(C|E^c)P(E^c)}=\frac{27\exp(-3)}{27\exp(-3)+25\exp(-5)}\cong 0.889
+                        $$
+                    </p>
+                </div>
+                <div class="ilic">
+                    <p>3. (Problems \(\#4.69\)) A total of \(2n\) people, consisting of \(n\) married couples, are randomly seated (all possible orderings being equally likely) at a round table.</p>  
+                    <p>Let \(C_i\) denote the event that the members of couple \(i\) are seated next to each other, \(i = 1, \ldots, n\).</p>  
+                    <p>(a) Find \(P(C_i)\).</p>  
+                    <p>(b) For \(j \neq i\), find \(P(C_j \mid C_i)\).</p>  
+                    <p>(c) Approximate the probability, for \(n\) large, that there are no married couples who are seated next to each other.</p>  
+                </div>
+                <div class="sol">
+                    $$
+                    P(C_i)=\frac{\displaystyle \frac{A^2_2 A^{2n-1}_{2n-1}}{2n-1}}{\displaystyle \frac{A_{2n}^{2n}}{2n}}=\frac{2}{2n-1}
+                    $$
+                    $$
+                    P(C_j|C_i)=\frac{P(C_j C_i)}{P(C_i)}= \frac{\displaystyle \frac{\displaystyle \frac{A_{2}^2\times A_{2}^2\times A_{2n-2}^{2n-2}}{2n-2}}{\displaystyle \frac{A_{2n}^{2n}}{2n}}}{\displaystyle \frac{\displaystyle \frac{A_2^2\times A_{2n-1}^{2n-1}}{2n-1}}{\displaystyle \frac{A_{2n}^{2n}}{2n}}}=\frac{2}{2n-2}
+                    $$
+
+                    <p>$n$很大时, $C_i$ 和 $C_j$ 是弱相依事件，所以可以近似的认为这是 $n$ 个独立的事件。又因为 $n$ 很大，所以说我们考虑一个随机变量 $X$ , 代表有 $X$ 对夫妻坐在了一起，我们只需考虑 $P(X=0)$, 用参数 $\displaystyle \lambda=n\times \frac{1}{n-1}\to 1, n\to \infty$ 的泊松分布近似：</p>
+                    $$
+                    P(X=0)=\frac{1}{1}e^{-1}=e^{-1}
+                    $$
+                </div>
+                <div class="ilic">
+                    <p>4. Two athletic teams play a series of games; the first team to win 4 games is declared the overall winner. Suppose that one of the teams is stronger than the other and wins each game with probability \(0.6\), independently of the outcomes of the other games. Find the probability, for \(i = 4, 5, 6, 7\), that the stronger team wins the series in exactly \(i\) games. Compare the probability that the stronger team wins with the probability that it would win a 2-out-of-3 series.</p>
+                </div>
+                <div class="sol">
+                    <p>让 $X$ 是强队系列赛胜利的比赛赛赛数，$ P(X=4)=(0.6)^4=0.1296 $，$ P(X=5)=\binom{4}{1}\times 0.4\times 0.6^4=0.20736 $，$ P(X=6)=\binom{5}{2}0.4^2\times 0.6^4=0.20736$，$P(X=7)=\binom{6}{2}0.4^3\times 0.6^4=0.165888$</p>
+                    $$
+                    P_1(强队胜利)=0.710208
+                    $$
+                    <p>在三局两胜赛之下，强队胜利的概率是：</p>
+                    $$
+                    P_2(强队胜利)=0.6^2+0.6\times 0.6\times 0.4\times \binom{2}{1}=0.288=0.648
+                    $$
+                </div>
+                <div class="ilic">
+                    <p>5. Solve the Banach match problem (Example 8e/Example 4.13) when the left-hand matchbox originally contained \(N_1\) matches and the right-hand box contained \(N_2\) matches.</p>
+                </div>
+                <div class="sol">
+                    <p> $1\le k<\min\left\{ N_1,N_2 \right\} $时
+                        $$
+                        P(left:0,right:k)=\binom{N_1+N_2-k-1}{N_2}(\frac{1}{2})^{N_2-k}(\frac{1}{2})^{N_1-1}(\frac{1}{2})
+                        $$
+                        $$
+                        P(left:k,right:0)=\binom{N_1+N_2-k-1}{N_2}(\frac{1}{2})^{N_1-k}+(\frac{1}{2})^{N_2-1}(\frac{1}{2})
+                        $$
+                        $$
+                        P(X=k)=\binom{N_1+N_2-k-1}{N_2}+\binom{N_1+N_2-k-1}{N_1}(\frac{1}{2})^{N_1+N_2-k}
+                        $$
+                    </p>
+                        
+                    <p> $k\ge \min\left\{ N_1,N_2 \right\} $时
+                        $$
+                        P=(\frac{1}{2})^{\max\left\{ N_1,N_2 \right\} }
+                        $$
+                    </p>
+                </div>
+                <div class="ilic">
+                    <p>6. Suppose that a batch of 100 items contains 6 that are defective and 94 that are not defective. If \( X \) is the number of defective items in a randomly drawn sample of 10 items from the batch, find (a) \( \mathbb{P}(X = 0) \) and (b) \( \mathbb{P}(X > 2) \).</p>
+                </div>
+                <div class="sol">
+                    <p>
+                    $$
+                    P(X=0)=\frac{\displaystyle \binom{94}{10}}{\displaystyle \binom{100}{10}}
+                    $$
+                    $$
+                    P(X>2)=1-P(X=0,1)=1-\left( \frac{\displaystyle \binom{94}{10}}{\displaystyle \binom{100}{10}}+\frac{\displaystyle \binom{94}{9}\binom{10}{1}}{\displaystyle \binom{100}{10}} \right) 
+                    $$
+                    </p>
+                </div>
+                <div class="ilic">
+                    <p>7. An urn contains 10 red, 8 black, and 7 green balls. One of the colors is chosen at random (meaning that the chosen color is equally likely to be any of the 3 colors), and then 4 balls are randomly chosen from the urn. Let X be the number of these balls that are of the chosen color.</p>
+
+                    <ol type="a">
+                    <li>Find \( \mathbb{P}(X = 0) \).</li>
+                    <li>
+                        Let \( X_i \) equal 1 if the i<sup>th</sup> ball selected is of the chosen color, and let it equal 0 otherwise. Find \( \mathbb{P}(X_i = 1), i = 1, 2, 3, 4 \).
+                    </li>
+                    <li>Find \( \mathbb{E}[X] \).</li>
+                    </ol>
+
+                    <p><i>Hint:</i> Express \( X \) in terms of \( X_1, X_2, X_3, X_4 \).</p>
+
+                </div>
+            </article>
+        </div>
+        

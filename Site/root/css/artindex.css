@@ -1,0 +1,232 @@
+/* 重置浏览器默认样式 */
+@import url("typography.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 设置页面整体布局 */
+body {
+    background-color: rgb(255, 255, 255);
+    font-family:"Wen Kai MonoGB-Medium";
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+
+
+/* 内容容器样式 */
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    z-index: 5;
+}
+
+
+.main-content {
+    width: 74%; /* 左侧 3/4 */
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.tophead {
+    height: 30vh;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    /* border-bottom: 2px solid rgba(0, 0, 0, 0.216);
+    border-left: 2px solid rgba(0, 0, 0, 0.216);
+    border-right: 2px solid rgba(0, 0, 0, 0.216);
+    border-top: 2px solid rgba(0, 0, 0, 0.216);
+    border-radius:20px; */
+}
+
+/* 定义文章栏 */
+.previous-arc{ 
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%; /* 2列布局 */
+    grid-gap: 10px;
+    width: 100%;
+    height: auto;
+}
+
+/* 定义各栏中的文章卡片样式 */
+.grid-arc{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.grid-arc article {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    min-height: 20vh;
+    height: auto;
+    width: 90%;
+
+    padding: 30px;
+
+    margin-left: auto;
+    margin-right: auto; /*居中效果*/
+    margin-top: 20px;
+
+    border-bottom: 2px solid rgba(0, 0, 0, 0.216);
+    border-left: 2px solid rgba(0, 0, 0, 0.216);
+    border-right: 2px solid rgba(0, 0, 0, 0.216);
+    border-top: 2px solid rgba(0, 0, 0, 0.216);
+    border-radius:20px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.arctitle {
+    font-size: 24px;
+    font-family: "Noto Sans SC ";
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.arcontent {
+    font-size: 16px;
+    color: #555;
+}
+
+
+/* 右侧栏样式 */
+.sidebar {
+    width: 25%;
+    left:75%;
+}
+
+.sidebarcontent {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.486);
+    margin-left: 30px;
+    padding-left: 25px;
+    padding-top: 30px;
+      
+    top:auto; /* 设置顶端为0 */
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column; /* 使元素垂直排列 */
+    /* border: 1.5px solid rgba(93, 93, 93, 0.425);
+    border-radius: 40px; */
+    z-index: 5;
+}
+
+.sidebarcontent a {
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.fixed {
+    position: fixed; /* 滚动到顶部时变为固定定位 */
+    top: 0;
+}
+
+.sidebarcontent a::before {
+    font-family: "Noto Sans SC";
+    content: "\2192"; /* 使用 Unicode 箭头 */
+    margin-right: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;  /* 平滑过渡和变换 */
+    font-weight: bold;
+    display: inline-block; /* 确保可以变换 */
+}
+
+/* 悬停时触发动画 */
+.sidebarcontent a:hover::before {
+    animation: bounce 0.6s ease forwards; /* 调用 bounce 动画 */
+    color: rgb(133, 52, 52);
+}
+
+/* 定义 bounce 动画，弹一下然后回到原位 */
+@keyframes bounce {
+    0% {
+        transform: translateX(0); /* 初始位置 */
+    }
+    30% {
+        transform: translateX(10px); /* 往右弹 */
+    }
+    60% {
+        transform: translateX(-5px); /* 回到左侧 */
+    }
+    100% {
+        transform: translateX(0); /* 回到初始位置 */
+    }
+}
+
+
+.sidebarcontent a:hover {
+    background-color: #f0f0f0;
+    color: rgb(133, 52, 52);
+}
+
+.sidebarcontent h3{
+    font-family: "Quicksand";
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: large;
+    color: rgb(242, 96, 203);
+}
+
+.arcbox {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: "Noto Sans SC";
+    font-size: 16px;
+    color: #555;
+    background-color: rgba(95, 158, 160, 0.531);
+  }
+  
+  /* 内容悬停 */
+  .arcbox:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .arcbox p{
+    font-size: 16px;
+    color: #555;
+    font-family: "Noto Sans SC";
+  }
+  
+  .arctitle {
+    font-size: 24px;
+    font-family: "Noto Sans SC ";
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+/* 整个页面滚动 */
+body {
+    height: 100vh;
+    overflow-y: scroll;
+}

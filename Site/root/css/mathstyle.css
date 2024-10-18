@@ -1,0 +1,126 @@
+/* 调整公式的字体大小和行距 */
+.mjx-inline {
+    font-size: 2.0em; /* 可以根据需要调整大小 */
+ }                                  
+
+.mjx-display {
+    font-size: 0.8em;
+}
+/* Definition */
+.def {
+    counter-increment: def;
+    display: block;
+    margin: 12px 0;
+    font-family: "Wen Kai GB-Regular";
+    }
+    
+    .def::before {
+    content: 'Definition ' counter(def) '. ';
+    font-weight: bold;
+    font-family: "Quicksand";
+    font-style: normal;
+    }
+
+.thm {
+    counter-increment: thm;
+    display: block;
+    margin: 12px 0;
+    font-family: "Wen Kai GB-Regular";
+    
+}
+
+.thm::before {
+content: 'Theorem ' counter(thm) '. ';
+font-weight: bold;
+font-family: "Quicksand";
+font-style: normal;
+}
+
+/* Lemma */
+
+.lemma {
+counter-increment: lemma;
+display: block;
+margin: 12px 0;
+font-family: "Wen Kai GB-Regular";
+}
+
+.lemma::before {
+content: 'Lemma ' counter(lemma) '. ';
+font-weight: bold;
+font-family: "Quicksand";
+font-style: normal;
+}
+
+/* Proof */
+.proof {
+display: block;
+margin: 12px 0;
+font-family: "Wen Kai GB-Regular";
+position: relative;
+padding-top: 10px;
+}
+
+.proof::before {
+content: 'Proof. ' attr(title);
+font-family: "Quicksand";
+font-style: italic;
+font-size: large;
+font-weight: bold;
+color: coral;
+}
+
+.proof::after {
+content: '□';
+filter: var(--proof-symbol-filter);
+position: absolute;
+font-size: large;
+right: -10px;
+bottom: -2px;
+}
+
+.sol {
+    display: block;
+    margin: 12px 0;
+    font-family: "Wen Kai GB-Regular";
+    font-style: normal;
+    position: relative;
+    padding-top: 10px;
+}
+
+.sol::before {
+    content: 'Solution. ' attr(title);
+    font-family: "Quicksand";
+    font-style: italic;
+    font-size: large;
+    font-weight: bold;
+    color: coral;
+ }
+
+ .remark-box {
+    background-color: #1b1d7e;
+    padding:0;
+    border-radius: 8px;
+    margin-top: 20px;
+    color: #fff;
+    /* 添加阴影效果 */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.remark-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.remark-text {
+    background-color: #f9f9f9;
+    color: #000;
+    padding: 15px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-top: 10px;
+    line-height: 1.6;
+    /* 内部文本框的阴影效果 */
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+}

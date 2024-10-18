@@ -1,0 +1,56 @@
+@import url("typography.css");
+
+body {
+    font-family: "Wen Kai GB-Light";
+    height: 100%;
+}
+
+/* 定义了页面最上部的显示界面 */
+.header {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 24px;
+    height: auto;
+    min-height: 10%;
+} 
+
+
+.art-cont {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.art-cont h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
+.art-cont p{
+
+    font-size:20px ;
+    margin-left: 15%;
+    margin-right: 15%;
+    line-height: 1.6;
+}
+
+/* 竖行排版模板 */
+
+.vertical-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+.vertical-txt {
+    writing-mode: vertical-rl; /* 设置竖排，右到左 */
+    text-orientation: upright; /* 保证文字竖直 */
+    padding: 10px;
+    width: auto; /* 控制宽度适应竖排 */
+    text-align: center;
+}
+
+
+

@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=ZCOOL+XiaoWei&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Ma+Shan+Zheng&family=Sixtyfour+Convergence:SCAN,XELA,YELA@5,-100..100,-77&family=Zhi+Mang+Xing&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Quicksand:wght@300..700&family=Raleway:wght@227&family=ZCOOL+XiaoWei&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap');
+.sixtyfour-convergence {
+    font-family: "Sixtyfour Convergence", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 0,
+      "SCAN" 5,
+      "XELA" 10,
+      "YELA" -77;
+  }
+  
+.karla {
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+.edu-au-vic-wa-nt-dots-custom {
+    font-family: "Edu AU VIC WA NT Dots",cursive;
+    font-optical-sizing: auto;
+    font-weight: 700; /* 字体权重可以是400到700 */
+    font-style: normal;
+  }
+
+.zhi-mang-xing-regular {
+    font-family: "Zhi Mang Xing", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.zcool-xiaowei-regular {
+    font-family: "ZCOOL XiaoWei", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.quicksand {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.raleway {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 227;
+  font-style: normal;
+}
+
+.noto-sans-sc {
+  font-family: "Noto Sans SC", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 150;
+  font-style: normal;
+}
+
+.long-cang-regular {
+  font-family: "Long Cang", cursive;
+  font-weight: 400;
+  font-style: normal;
+  opacity: 0.7;
+}
+
+.noto-serif-sc {
+  font-family: "Noto Serif SC", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Wen Kai GB-Light";
+  src: url("../../../Theme/lxgw-wenkai-gb-v1.501/LXGWWenKaiGB-Light.ttf");
+}
+
+@font-face {
+  font-family: "Wen Kai GB-Medium";
+  src: url("../../../Theme/lxgw-wenkai-gb-v1.501/LXGWWenKaiGB-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Wen Kai GB-Regular";
+  src: url("../../../Theme/lxgw-wenkai-gb-v1.501/LXGWWenKaiGB-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Wen Kai MonoGB-Light";
+  src: url("../../../Theme/lxgw-wenkai-gb-v1.501/LXGWWenKaiMonoGB-Light.ttf");
+}
+
+@font-face {
+  font-family: "Wen Kai MonoGB-Medium";
+  src: url("../../../Theme/lxgw-wenkai-gb-v1.501/LXGWWenKaiMonoGB-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Wen Kai MonoGB-Regular";
+  src: url("../../../Theme/lxgw-wenkai-gb-v1.501/LXGWWenKaiMonoGB-Regular.ttf");
+}
+
+/* nav&header */
+header {
+  position: relative;
+  color: white;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  z-index: 10;
+  }
+
+nav ul {
+  padding: 0;
+  display: flex; /* 使用Flexbox布局 */
+  justify-content: left; /* 字体靠左 */
+}
+
+nav ul li {
+  float:center;
+}
+
+nav ul li a {
+  display: block; /* 链接变成块级元素 */
+  color: rgb(13, 0, 0);
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none; /* 移除下划线 */
+  font-size: 10px;
+  font-family: "Quicksand";
+  transition: background-color ease 0.3s;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  background-color: rgba(100, 37, 37, 0.267);
+}
+
+.footer {
+  margin-top: 20%;
+  background-image: url('your-generated-background-image-url');
+  background-size: cover;
+  color: #333;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-logo h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.footer-newsletter input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.footer-newsletter button {
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.footer-links h3 {
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 5px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #888;
+}
+
+.footer-policies a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer-policies a:hover {
+  text-decoration: underline;
+}
+
+/* 定义文章栏 */
+.arcol{ 
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+
+/* 这是文章显示内容，要在文章内容的页面显示文章 */
+.arcol article{
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 30px;
+  font-family: "Noto Sans SC";
+  font-size: 16px;
+  color: #555;
+  background-color: rgba(160, 159, 95, 0.154);
+}
+
+article p {
+  line-height: 2em;
+}
+article h1{
+  text-align: center;
+}
+
+article h2{
+  text-align: left;
+}
+
+/* 设置背景框的样式 */
+.img-cont {
+  background-color: #2933c642;  /* 深灰色背景 */
+  padding: 50px;           /* 内边距，控制图片与边框的距离 */
+  display: inline-block;    /* 使背景框根据内容自适应宽度 */
+  position: relative;       /* 允许放置文字在左上角 */
+  border-radius: 20px;
+  margin: 30px;
+}
+
+/* 左上角图片标题的样式 */
+.img-title {
+  position: absolute;
+  top: 0;                   /* 将标题栏固定在容器顶部 */
+  left: 0;                  /* 从左边开始 */
+  width: 100%;              /* 标题栏占满整个容器宽度 */
+  margin-bottom: 20px;
+  background-color: #d3d3d3; /* 浅灰色背景 */
+  color: black;             /* 字体颜色 */
+  padding: 10px;            /* 内边距，控制文本距离边框的距离 */
+  font-size: 16px;          /* 设置字体大小 */
+  font-weight: bold;        /* 字体加粗 */
+  box-sizing: border-box;    /* 确保内边距不会影响标题栏宽度 */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* 设置图片的样式 */
+.img-cont img {
+  margin-top: 20px;
+  max-width: 100%;         /* 使图片在容器内自适应 */
+  height: 80%;            /* 保持图片的宽高比 */
+  border-radius: 10px;     /* 可选：设置图片的圆角效果 */
+}
+
+.grid-arc{
+  display: flex;
+  flex-direction: column;
+}
+
+/* 这是文章简介卡片的样式，他将在文章栏中排成一竖排 */
+
+
+.read-more {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #007bff;
+  text-decoration: none; 
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* 阅读更多的箭头 */
+
+.read-more a{
+  color: #007bff;
+  text-decoration: none;
+}
+
+.read-more::after {
+  content: " \2192"; /* 使用Unicode箭头 */
+  transition: color 0.3s ease, transform 0.3s ease;  /* 平滑过渡和变换 */
+  font-weight: bold;
+  display: inline-block; /* 确保可以变换 */
+}
+
+.read-more:hover::after{
+  animation: bounce 0.6s ease forwards; /* 调用 bounce 动画 */
+}
+
+/* 用 <span> 标签可以修改段落内英文的样式 */
+.en {
+  font-family: "Quicksand";
+  font-weight: 600;
+}
+
+.qut {
+  margin-left: 10%;
+  margin-right: 10%;
+  line-height: 1.5em;
+}
+/* 代码框的外部容器样式 */
+.code-cont {
+  border: 1px solid #ddd; /* 边框颜色 */
+  border-radius: 10px; /* 圆角 */
+  margin: 30px;
+  overflow: hidden; /* 防止溢出 */
+  background-color: #2d2d2d; /* 背景色 */
+}
+
+/* 标题栏样式 */
+.code-title {
+  background-color: #404040; /* 标题栏背景颜色 */
+  color: #fff; /* 字体颜色 */
+  padding: 10px; /* 内边距 */
+  font-family: "Noto Sans SC"; /* 字体样式 */
+  font-size: 14px; /* 字体大小 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 复制按钮的样式 */
+.copy-button {
+  background-color: #666;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+pre {
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 10px; /* 圆角半径 */
+  border: 1px solid #ddd; /* 边框颜色和大小 */
+  padding: 15px; /* 内边距，确保代码不会贴在边框上 */
+  overflow-x: auto; /* 让代码块可横向滚动 */
+ }
+
+code {
+  font-family: "Consolas",monospace;
+  color: #333;
+  border-radius: 15px;
+  line-height: 1.5em;
+} 
+
+/* 基本样式，适用于行内代码 */
+.inl-code {
+  background-color: #f5f5f5; /* 背景颜色 */
+  border: 1px solid #ddd;    /* 边框颜色 */
+  padding: 2px 6px;          /* 内边距 */
+  border-radius: 5px;       /* 圆角效果 */
+  display: inline-block;     /* 显示为行内块元素 */
+  color: #333;   /* 文字颜色 */
+  font-size: 0.8em;            
+  font-family: "Quicksand" ;
+}
+
+.ilic {
+  background-color: rgb(230, 230, 255);
+  padding:10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.edit {
+  margin: 10px;
+  background-color: #007bff;
+  color: azure;
+  font-family: "Wen Kai GB-Regular";
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.edit:hover {
+  background-color: blue;
+}
+
+@keyframes bounce {
+  0% {
+      transform: translateX(0); /* 初始位置 */
+  }
+  30% {
+      transform: translateX(10px); /* 往右弹 */
+  }
+  60% {
+      transform: translateX(-5px); /* 回到左侧 */
+  }
+  100% {
+      transform: translateX(0); /* 回到初始位置 */
+  }
+}
+
+@media print {
+  /* 去除导航栏 */
+  nav {
+      display: none;
+  }
+  
+  .arcol article{
+    max-width: 100%;
+    margin: 0;
+    padding:20px;
+    background-color: inherit !important;
+    color: inherit !important;
+    -webkit-print-color-adjust: exact; /* 保留打印时的颜色 */
+    print-color-adjust: exact;               /* 保留打印时的颜色 */
+  }
+}

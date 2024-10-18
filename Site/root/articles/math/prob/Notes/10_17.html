@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>概率论作业 5</title>
+        <link rel="stylesheet" href="../../../../css/typography.css">
+        <link rel="stylesheet" href="../../../../css/mathstyle.css">
+        <script src="../../../../js/math.js"></script>
+        <script src="../../../../js/markdown.js"></script>
+    </head> 
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../../../../index.html">Home</a></li>
+                    <li><a href="../../../../about.html">About Me</a></li>
+                    <li><a href="../../../../articles/index.html">Articles</a></li>
+                    <li><a href="../../../../services.html">Services</a></li>
+                    <li><a href="../../../../contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="arcol">
+            <article>
+                <h1>10 月 17 日笔记</h1>
+                <div class="remark-box">
+                    <div class="remark-title">Remark.4.42</div>
+                    
+                    <div class="remark-text">
+                        <p>We can weaken the condition of binomial random variable in the application of Poisson approx.</p>
+
+                        <p>Consider <em>n</em> events, event <em>i</em> occurs with paobability $p_i, i=1,2,3,\cdots ,n$. If all $p_i$'s are small and the trial are either independent or at most "weakly dependent". The number of these events occur approxmately has a Poisson distribution with mean $\displaystyle \sum_{i=1}^{n}p_i$
+                         </p>   
+                    </div>
+                </div>
+                <p>接下来我们介绍泊松分布的几个应用</p>
+                <h2>最大游程长度概率分布</h2>
+                <div class="remark-box">
+                    <div class="remark-title">Example 4.16</div>
+                    <div class="remark-text">
+                        A coin is flipped <em>n</em> times. Assume each flipping is independent, each flip comes up heads with probability p. What is the probability that the longest string of conseutive heads is k?   
+                    </div>
+                </div>
+                <div class="sol">
+                    <p>1. (Poisson Paradigm) 我们这样构造一系列事件：
+                        $$E_i=\{第i, i+1,\cdots, i+k-1 次试验是成功的, 但是第i+k次试验是失败的\}, 1\le i\le n-k$$
+                        $$E_{n-k+1}=\{后 k 次试验均成功\}$$</p>
+                    <p>我们就可以知道像$E_1,E_2$这样的两个事件是不可能同时发生的，即若两个事件对应的试验次数是有交的，那么$P(E_s|E_u)=0$，像$E_1, E_{i+k+1}$这样的两个事件可能同时发生，这可以看成是两个对应实验的次数是无交的，又因为每次试验是独立的，所以$P(E_s|E_u)=P(E_s)=(1-p)p^k$。
+                    </p>
+                    <p>事实上 $p^k$ 很小时我们可以认为 $(1-p)p^k\sim 0$，可以认为我们构造的事件序列$\{E_i\}$是一列弱相依 (「weakly independent」) 事件，又因为各个事件发生的概率都很小，所以可以用泊松范式 (「Poisson paradigm」) 近似: 
+                    $$
+                    P(E_i)=p^k(1-p), i\le n-k
+                    $$
+                    $$
+                    P(E_{n-k+1})=p^k
+                    $$
+                    $$
+                    E(N)=\sum_{i=k}^{n-k+1}P(E_i)=(n-k)p^k(1-p)+p^k
+                    $$
+                    </p>
+                    <p>那么我们的事件列发生的个数$N$就服从于参数为$E(N)$的泊松分布。</p>
+                    <p>1. 不存在 k 次连续的正面朝上：$P(N=0)\sim \exp[(-(n-k)p^k(1-p))-p^k]$，这样就计算出了存在连续 k 次连续正面朝上的概率。</p>
+                    <p>2. 设 $L_n$ 是 <em>n</em> 次试验中连续出现正面朝上的最大次数，即最大游程的长度。没有 k 次连续向上就是$ P(L_n < k )=P(N=0)$</p>
+                    <p>让硬币是均匀的，我们继续探讨一些数值上的结果：</p>
+                    <p>$$P(L_n < k)\sim \exp(-\frac{n-k+2}{2^{k+1}})\sim \exp(-\frac{n}{2^{k+1}})$$(我们认为$\exp[(k-2)/2^{k+1}]\sim e^0=1)$</p>
+                    <p>为了让形式更具有序列性，令$k=i+j,2^j=n$，即$j=log_2n$</p>
+                    <p>
+                        $$P(L_n< i+j)\sim e^{\displaystyle -(1/2)^{i+1}}$$
+                    </p>
+                    <p>然后我们就可以分别计算不同的 i 值下的概率</p>
+                    <p>
+                        $$P\{L_n < j - 3\} \approx e^{-4} \approx 0.0183$$
+                      </p>
+                      
+                      <p>
+                        $$P\{L_n = j - 3\} \approx e^{-2} - e^{-4} \approx 0.1170$$
+                      </p>
+                      
+                      <p>
+                        $$P\{L_n = j - 2\} \approx e^{-1} - e^{-2} \approx 0.2325$$
+                      </p>
+                      
+                      <p>
+                        $$P\{L_n = j - 1\} \approx e^{-1/2} - e^{-1} \approx 0.2387$$
+                      </p>
+                      
+                      <p>
+                        $$P\{L_n = j\} \approx e^{-1/4} - e^{-1/2} \approx 0.1723$$
+                      </p>
+                      
+                      <p>
+                        $$P\{L_n = j + 1\} \approx e^{-1/8} - e^{-1/4} \approx 0.1037$$
+                      </p>
+                      
+                      <p>
+                        $$P\{L_n = j + 2\} \approx e^{-1/16} - e^{-1/8} \approx 0.0569$$
+                      </p>
+                      
+                      <p>
+                        $$P\{L_n = j + 3\} \approx e^{-1/32} - e^{-1/16} \approx 0.0298$$
+                      </p>
+                      
+                      <p>
+                        $$P\{L_n \geq j + 4\} \approx 1 - e^{-1/32} \approx 0.0308$$
+                      </p>
+                </div>
+                <div class="img-cont">
+                    <div class="img-title">游程长度概率分布 $P(L_n< i+j),j=log_2n$</div>
+                    <img src="../images/游程.png" alt="游程">
+                </div>
+                <h2>事件时间段内次数分布</h2>
+                <p>泊松分布在这样地情形下也有应用：一些事件例如一段时间内发生一次地震，爆发一次战争，一段时间内某人进入银行。这些蕴含在我们常识中但是不会经常在一天内发生的事件，如果我们假定这些时间发生在一列随机的时间点上，设存在某个正数 $\lambda$ 使得如下假设条件成立：
+                </p>
+                <p>1. 在 任意时间段$h$ 区间内，恰好发生一个事件的概率彼此相同，为$\lambda h+o(h)$</p>
+                <p>2. 在 任意时间段$h$ 区间内发生 2 个或多个事件概率很小，对于只发生一次来说是小量$o(h)$</p>
+                <p>3. 在任意不相交的时间段内发生的事件是彼此独立的</p>
+                <p>我们可以说明这样一件事情：<strong>在上述条件成立时，在任意长度为 $t$ 的时间段内事件 $E$ 发生的次数 $N$ 服从参数为$\lambda t$泊松分布</strong></p>
+                <div class="proof">
+                    <p>我们把时间段 <em>t</em> 等划成 <em>n</em> 个不相交的子区间，则有：
+                    $$
+                    P(N(t)=k)=P\{k个区间发生了仅1次事件，其余n-k区间没有发生\}+P\{一共发生了k次，且至少有一个发生了两次事件\}
+                    $$</p>
+                    <p>我们构造的两个事件是互斥的，记作$A,B$，记$E_i$是第$i$个区间发生了至少两次事件，那么：
+                    $$
+                    P(B)\le \sum_{i=1}^{n}P(E_i) =no(t/n)=t\left(\frac{o(t/n)}{t/n} \right)\to 0
+                    $$
+                    <p>
+                        这样我们只需考虑事件$P(A)$
+                    </p>
+                    <p>$$
+                        P(A)=\binom{n}{k}\left[ \frac{\lambda t}{n}+o(\frac{t}{n}) \right]^k\left[ 1- \frac{\lambda t}{n}-o(\frac{t}{n})  \right] ^{n-k}
+                        $$
+                        其中有 $\displaystyle n^k\left[\frac{\lambda t}{n}+o(\frac{t}{n}) \right]^k=\left(\lambda t+t(\frac{o(t/n)}{t/n})\right)^k\to (\lambda t)^k $，$\displaystyle X\left[\frac{\lambda t}{n}+o(\frac{\lambda t}{n})  \right]^{n-k}$ 
+                        $$
+                        P(N(t)=k)=P(A)\sim e^{-\lambda t}\frac{(\lambda t)^k}{k!}
+                        $$</p>
+                </p>
+                </div>
+            </article>
+        </div>
+       
+        </body>
+    </html>

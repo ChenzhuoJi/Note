@@ -446,3 +446,48 @@ $$
 \end{aligned}
 $$
 
+Let $(S,A,\mathbb{P})$ be a  probability space. Let $E\in A$ be an event labled as *success*, that occurs with probability p. Independent trials are performed. but the number of trials is **NOT** preset. <span class="code-inl">Let $X$ be the number of trials until the first success</span>, then $X$ is said to be a **geometric random variable** with parameter *p*. The pmf is given by
+$$
+p(n)=\mathbb{P}(X=n)=(1-p)^{n-1}p
+$$
+
+For the geometric random variable $X$ with teh parameter p: 
+
+the distribution function is 
+$$
+F(k)=\mathbb{P}(X\le k)=1-(1-p)^k, k=1, 2, \cdots
+$$
+
+the expected value: 
+$$
+\mathbb{E}(X)=\frac{1}{p}
+$$
+
+the variance is:
+$$
+Var(X)=\frac{1-p}{p^2}
+$$
+
+## Negative binomial random variable
+
+Let $(S,A,\mathbb{P})$ be a  probability space. Let $E\in A$ be an event labled as *success*, that occurs with probability p. Independent trials are performed until a total of *r* successes is accumulated. Let $X$ be the number of trials required, then $X$ is said to be a negative binomial random variable with parameter $(r,p)$
+
+In particular, a geometric random variable is just a negative binomial r.v. with parameter $(1,p)$. 
+
+The pmf of a negative binomial r.v. is given by
+$$
+P(X=n)=\binom{n-1}{r-1}p^r(1-p)^{n-r}
+$$
+
+## Poisson random variable
+
+Let $(S,A,\mathbb{P})$ be a  probability space, $X$ is said to be a Poisson random variable with parameter $\lambda>0$ if its probability mass function is given by
+$$
+p(i)=\mathbb{P}(X=i)=e^{-\lambda}\frac{\lambda^i}{i!}
+$$
+
+### Poisson paradigm
+
+We can weaken the condition of binomial random variable in the application of Poisson approx.
+
+Consider *n* events, event *i* occurs with paobability $p_i, i=1,2,3,\cdots ,n$. If all $p_i$'s are small and the trial are either independent or at most "weakly dependent". The number

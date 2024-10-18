@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <title>MATLAB</title>
+        <link rel="stylesheet" href="../../../css/typography.css">
+        <link rel="stylesheet" href="../../../css/mathstyle.css">
+        <script src="../../../script/highlight.js"></script>
+        <script src="../../../script/codecopy.js"></script>
+        <script src="../../../script/math.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../../about.html">About Me</a></li>
+                    <li><a href="../../../articles/index.html">Articles</a></li>
+                    <li><a href="../../../services.html">Services</a></li>
+                    <li><a href="../../../contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        <header>
+        <div class="arcol" id="arcol">
+            <article id="arc">
+                <h1><span class="en">MATLAB</span> 绘制 <span class="en"> Julia </span>集。 </h1>
+                <h2>Julia Set</h2>
+                <p>定义一个复函数：$f(z)=z^2+c$, 从初始点反复迭代这个函数</p>
+                $$
+                z_n=f(z_{n-1})=z_{n-1}^2+c
+                $$
+                <p>若在经过无限次迭代之后, $z_n$ 的值仍然保持有限, 那么这个集合属于 <strong>Juila Set</strong></p>
+                <h3>轨道 (Orbit) </h3>
+                <p>轨道是指在这一个动态系统(dynamical system)中, 随着 $n$ 的增大，逐渐产生的一系列$z_1, z_2, z_3 \cdots$</p>
+                <h3>Task</h3>
+                <p>用 Matlab 代码来找到这样一个 Julia Set 集合：$S(c)$, 其中有所有属于 $S$ 的 $z$ 都在 $f$ 迭代之下是有界的</p>
+                <div class="img-cont">
+                    <div class="img-title">Julia 示意图 $c=-0.70176-0.3842i$ Theme="hot"</div>
+                    <img src="../images/julia1.png" alt="Julia 1">
+                </div>
+                <div class="img-cont">
+                    <div class="img-title">Julia 示意图 $c=0.4+0.4i$ Theme="flag"</div>
+                    <img src="../images/julia3.png" alt="Julia 1">
+                </div>
+                <p>为了使代码可以进行, 我们采用以下模型：</p>
+                <p class="en qut">
+                    It has been shown that if the modulus of $z_n$ becomes larger than 2 for some $n$, then it is guaranteed that the orbit will tend to infinity. The value of $n$ for which this becomes true is called the "escape velocity" of a particular $z_0$. Write a function that returns the escape velocity of a given $z_0$ and $c$. The function declaration should be: <span class="inl-code">n = escapeVelocity(z0, c, N)</span> where $N$ is the maximum allowed escape velocity (basically, if the modulus of $z_n$ does not exceed 2 for $n < N$, return $N$ as the escape velocity. This will prevent infinite loops). Use <span class="inl-code">abs</span> to calculate the modulus of a complex number.
+                </p>
+                <p>
+                   在这里我们以 2 作为限制, 认为模数超过 2 的初值都将发散，事实上形如 $f(z_n)=z_n^2+c$ 的复动力系统是 Julia Set 中的一类特殊情况，更具体的称谓就是有名的曼德布洛特 (Mandebrot) 集。超过 2 就会发散是可以用数学证明推演出来的。
+                </p>
+                <p>
+                    所以我们用一个量来描述一个确定点轨道的「逃逸速度」，即：若在轨道中迭代出了模长大于 2 的点，立刻停止迭代，然后返回该大于 2 的点的指标，这个指标就是我们要说的「逃逸速度」，越小的指标说明「逃逸」得越慢。
+                </p>
+                <div class="code-cont">
+                    <!-- 标题栏 -->
+                    <div class="code-title">
+                        <span>matlab</span>
+                        <button class="copy-button" onclick="copyCode()">复制代码</button>
+                    </div>
+                    <pre>
+                        <code>
+function n = escapeVelocity(z0, c, N)
+    z = z0;  % 初始复数 z0
+    for n = 1:N
+        if abs(z) > 2  % 判断模是否大于2
+            return;    % 如果大于2，返回当前n
+        end
+        z = z^2 + c;   % 迭代公式：z_n+1 = z_n^2 + c
+    end
+    n = N;  % 如果循环结束且未超过2，返回最大值N
+end
+                        </code>
+                    </pre>
+                </div>
+                <p>这样我们就赋予了一个主要关于初值的函数，每一个初值对应一个逃逸速度 $N$, 然后我们遍历复平面上一定区域上的点 (计算机对于数学模型总要有取舍，足够多的取值计算机可以准确的做到，无穷的取值只有抽象的数学可以做到) 就可以画出逃逸速度在复平面上的分布，我们取$5000\times 5000$个点：</p>
+                <div class="code-cont">
+                    <!-- 标题栏 -->
+                    <div class="code-title">
+                        <span>matlab</span>
+                        <button class="copy-button" onclick="copyCode()">复制代码</button>
+                    </div>
+                    <pre>
+                        <code>
+function M = julia(zMax, c, N)
+    % 创建5000x5000的复数矩阵 Z
+    x = linspace(-zMax, zMax, 5000);  % 实部范围从 -zMax 到 zMax
+    y = linspace(-zMax, zMax, 5000);  % 虚部范围从 -zMax 到 zMax
+    [X, Y] = meshgrid(x, y);         % 创建网格
+    Z = X + 1i*Y;                    % 复数矩阵 Z
+
+    % 初始化逃逸速度矩阵 M
+    M = zeros(size(Z));  % 大小与 Z 相同
+
+    % 计算每个 Z 对应的逃逸速度
+    for i = 1:numel(Z)
+        M(i) = escapeVelocity(Z(i), c, N);  % 对每个复数计算逃逸速度
+    end
+
+    % 显示分形图
+    imagesc(atan(0.1 * M));  % 使用atan调整图像显示效果
+    colormap('flag');         % 设置颜色地图
+    axis xy;                 % 确保y轴不翻转
+    colorbar;                % 添加颜色条
+end
+                        </code>
+                    </pre>
+                </div>
+                <p>我们用<span class="inl-code"> meshgrid </span> 来创造一个矩阵，<span class="inl-code">(X,Y)=meshgrid(x,y) </span>, 其中 <span class="inl-code">x, y</span> 是从 <span class="inl-code">-zMax</span> 到 <span class="inl-code">zMax</span>生成的, 我们选择生成数为 5000, 然后让他代表复平面上的 $5000\times 5000$ 个点，再用逃逸速度函数画出我们的图像, 令 $c=-0.8+0.156i$ , 选择 matlab 中 <span class="inl-code">"copper"</span> 的绘图样式</p>
+                <div class="img-cont">
+                    <div class="img-title">Julia 示意图 $c-0.8+0.156i$ Theme="copper"</div>
+                    <img src="../images/julia2.png" alt="">
+                </div>
+            </article>
+        </div>
+        <!-- <script>
+            function transen(text) {
+                let placeholders = [];
+                let index = 0;
+        
+                // 匹配 $$ 内的内容（公式），并将其替换为占位符
+                text = text.replace(/\$[^$]+\$/g, function(match) {
+                    placeholders.push(match);  // 存储公式的原始内容
+                    return `PLACEHOLDER_${index++}`;  // 替换为占位符
+                });
+        
+                // 匹配 <> 内的HTML标签，并将其替换为占位符
+                text = text.replace(/<[^>]+>/g, function(match) {
+                    placeholders.push(match);  // 存储HTML标签
+                    return `PLACEHOLDER_${index++}`;  // 替换为占位符
+                });
+        
+                // 使用正则表达式匹配英文单词，并在非公式和非HTML标签的部分高亮显示
+                text = text.replace(/[A-Za-z]+/g, function(match) {
+                    return '<span class="en">' + match + '</span>';
+                });
+        
+                // 将占位符替换回原始公式和HTML标签
+                text = text.replace(/PLACEHOLDER_(\d+)/g, function(match, idx) {
+                    return placeholders[idx];  // 恢复占位符对应的内容
+                });
+        
+                return text;
+            }
+        
+            // 获取容器中的文本
+            const container = document.getElementById('arc');
+            const originalText = container.innerHTML;
+        
+            // 将英文单词高亮显示（不识别公式和HTML标签内的内容）
+            container.innerHTML = transen(originalText);
+        </script>
+         -->
+        <script src="../script/math.js"></script>
+    </body>
+</html>
