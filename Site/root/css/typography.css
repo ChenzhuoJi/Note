@@ -204,42 +204,6 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* 定义文章栏 */
-.arcol{ 
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  padding: 20px;
-}
-
-/* 这是文章显示内容，要在文章内容的页面显示文章 */
-.arcol article{
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  padding: 30px;
-  font-family: "Noto Sans SC";
-  font-size: 16px;
-  color: #555;
-  background-color: rgba(160, 159, 95, 0.154);
-}
-
-article p {
-  line-height: 2em;
-}
-article h1{
-  text-align: center;
-}
-
-article h2{
-  text-align: left;
-}
-
 /* 设置背景框的样式 */
 .img-cont {
   background-color: #2933c642;  /* 深灰色背景 */
@@ -274,14 +238,6 @@ article h2{
   height: 80%;            /* 保持图片的宽高比 */
   border-radius: 10px;     /* 可选：设置图片的圆角效果 */
 }
-
-.grid-arc{
-  display: flex;
-  flex-direction: column;
-}
-
-/* 这是文章简介卡片的样式，他将在文章栏中排成一竖排 */
-
 
 .read-more {
   margin-top: 20px;
@@ -324,71 +280,6 @@ article h2{
   margin-right: 10%;
   line-height: 1.5em;
 }
-/* 代码框的外部容器样式 */
-.code-cont {
-  border: 1px solid #ddd; /* 边框颜色 */
-  border-radius: 10px; /* 圆角 */
-  margin: 30px;
-  overflow: hidden; /* 防止溢出 */
-  background-color: #2d2d2d; /* 背景色 */
-}
-
-/* 标题栏样式 */
-.code-title {
-  background-color: #404040; /* 标题栏背景颜色 */
-  color: #fff; /* 字体颜色 */
-  padding: 10px; /* 内边距 */
-  font-family: "Noto Sans SC"; /* 字体样式 */
-  font-size: 14px; /* 字体大小 */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* 复制按钮的样式 */
-.copy-button {
-  background-color: #666;
-  border: none;
-  color: #fff;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 12px;
-  border-radius: 5px;
-}
-
-pre {
-  margin-left: 10%;
-  margin-right: 10%;
-  border-radius: 10px; /* 圆角半径 */
-  border: 1px solid #ddd; /* 边框颜色和大小 */
-  padding: 15px; /* 内边距，确保代码不会贴在边框上 */
-  overflow-x: auto; /* 让代码块可横向滚动 */
- }
-
-code {
-  font-family: "Consolas",monospace;
-  color: #333;
-  border-radius: 15px;
-  line-height: 1.5em;
-} 
-
-/* 基本样式，适用于行内代码 */
-.inl-code {
-  background-color: #f5f5f5; /* 背景颜色 */
-  border: 1px solid #ddd;    /* 边框颜色 */
-  padding: 2px 6px;          /* 内边距 */
-  border-radius: 5px;       /* 圆角效果 */
-  display: inline-block;     /* 显示为行内块元素 */
-  color: #333;   /* 文字颜色 */
-  font-size: 0.8em;            
-  font-family: "Quicksand" ;
-}
-
-.ilic {
-  background-color: rgb(230, 230, 255);
-  padding:10px;
-  font-family: 'Times New Roman', Times, serif;
-}
 
 .edit {
   margin: 10px;
@@ -398,6 +289,7 @@ code {
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
+
 .edit:hover {
   background-color: blue;
 }

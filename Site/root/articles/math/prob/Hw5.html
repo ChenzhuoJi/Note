@@ -4,6 +4,7 @@
         <title>概率论作业 5</title>
         <link rel="stylesheet" href="../../../css/typography.css">
         <link rel="stylesheet" href="../../../css/mathstyle.css">
+        <link rel="stylesheet" href="../../../css/techdoc.css">
         <script src="../../../js/math.js"></script>
     </head>
     <body>
@@ -21,7 +22,6 @@
         <div class="arcol">
             <article>
                 <h1>概率论作业 5</h1>
-                <h3>P1</h3>
                 <div class="ilic">
                 <p>
                     Suppose that a biased coin that lands on heads with probability <em>p</em> is flipped 10 times. Given that a total of 6 heads results, find the conditional probability that the first 3 outcomes are:
@@ -34,11 +34,16 @@
                 <div class="sol">
                     设 $E$ 是事件：有六次正面朝上。$F_1,F_2$ 分别是 1. 和 2. 对应的事件
 
-                    1. 前三次的结果是「正反反」时，那么后七次需要有五次正面朝上。
-                    $$
-                    
-                    $$
+                    <p>1. 前三次的结果是「正反反」时，那么后七次需要有五次正面朝上。
+                        $$
+                        P(F_1|E)=\binom{7}{5}p^5(1-p)^2
+                        $$</p>
+                    <p>2. 前三次的结果是「反正反」时，那么后七次需要有五次正面朝上。
+                        $$
+                        P(F_2|E)=\binom{7}{5}p^5(1-p)^2
+                        $$</p>
                 </div>
+
                 <div class="ilic">
                     <p>2. The number of times that a person contracts a cold in a given year is a Poisson random variable with parameter \( \lambda = 5 \). Suppose that a new wonder drug (based on large quantities of vitamin C) has just been marketed that reduces the Poisson parameter to \( \lambda = 3 \) for 75 percent of the population. For the other 25 percent of the population, the drug has no appreciable effect on colds. If an individual tries the drug for a year and has 2 colds in that time, how likely is it that the drug is beneficial for him or her?</p>
                 </div>
@@ -52,10 +57,11 @@
                         P(C|E^c)=e^{-5}\times \frac{25}{2!}=\frac{25}{2}e^{-5}
                         $$
                         $$
-                        P(E|C)=\frac{P(C|E)P(E)}{P(C|E)P(E)+P(C|E^c)P(E^c)}=\frac{27\exp(-3)}{27\exp(-3)+25\exp(-5)}\cong 0.889
+                        P(E|C)=\frac{P(C|E)P(E)}{P(C|E)P(E)+P(C|E^c)P(E^c)}=\frac{27\exp(-3)}{27\exp(-3)+25\exp(-5)}\approx 0.889
                         $$
                     </p>
                 </div>
+
                 <div class="ilic">
                     <p>3. (Problems \(\#4.69\)) A total of \(2n\) people, consisting of \(n\) married couples, are randomly seated (all possible orderings being equally likely) at a round table.</p>  
                     <p>Let \(C_i\) denote the event that the members of couple \(i\) are seated next to each other, \(i = 1, \ldots, n\).</p>  
@@ -76,6 +82,7 @@
                     P(X=0)=\frac{1}{1}e^{-1}=e^{-1}
                     $$
                 </div>
+
                 <div class="ilic">
                     <p>4. Two athletic teams play a series of games; the first team to win 4 games is declared the overall winner. Suppose that one of the teams is stronger than the other and wins each game with probability \(0.6\), independently of the outcomes of the other games. Find the probability, for \(i = 4, 5, 6, 7\), that the stronger team wins the series in exactly \(i\) games. Compare the probability that the stronger team wins with the probability that it would win a 2-out-of-3 series.</p>
                 </div>
@@ -89,6 +96,7 @@
                     P_2(强队胜利)=0.6^2+0.6\times 0.6\times 0.4\times \binom{2}{1}=0.288=0.648
                     $$
                 </div>
+
                 <div class="ilic">
                     <p>5. Solve the Banach match problem (Example 8e/Example 4.13) when the left-hand matchbox originally contained \(N_1\) matches and the right-hand box contained \(N_2\) matches.</p>
                 </div>
@@ -101,7 +109,7 @@
                         P(left:k,right:0)=\binom{N_1+N_2-k-1}{N_2}(\frac{1}{2})^{N_1-k}+(\frac{1}{2})^{N_2-1}(\frac{1}{2})
                         $$
                         $$
-                        P(X=k)=\binom{N_1+N_2-k-1}{N_2}+\binom{N_1+N_2-k-1}{N_1}(\frac{1}{2})^{N_1+N_2-k}
+                        P(X=k)=\left[\binom{N_1+N_2-k-1}{N_2}+\binom{N_1+N_2-k-1}{N_1}\right](\frac{1}{2})^{N_1+N_2-k}
                         $$
                     </p>
                         
@@ -111,6 +119,7 @@
                         $$
                     </p>
                 </div>
+
                 <div class="ilic">
                     <p>6. Suppose that a batch of 100 items contains 6 that are defective and 94 that are not defective. If \( X \) is the number of defective items in a randomly drawn sample of 10 items from the batch, find (a) \( \mathbb{P}(X = 0) \) and (b) \( \mathbb{P}(X > 2) \).</p>
                 </div>
@@ -120,10 +129,11 @@
                     P(X=0)=\frac{\displaystyle \binom{94}{10}}{\displaystyle \binom{100}{10}}
                     $$
                     $$
-                    P(X>2)=1-P(X=0,1)=1-\left( \frac{\displaystyle \binom{94}{10}}{\displaystyle \binom{100}{10}}+\frac{\displaystyle \binom{94}{9}\binom{10}{1}}{\displaystyle \binom{100}{10}} \right) 
+                    P(X>2)=1-P(X=0,1,2)=1-\left( \frac{\displaystyle \binom{94}{10}}{\displaystyle \binom{100}{10}}+\frac{\displaystyle \binom{94}{9}\binom{6}{1}}{\displaystyle \binom{100}{10}}+\frac{\displaystyle\binom{94}{8}\binom{6}{2}}{\displaystyle \binom{100}{10}} \right) 
                     $$
                     </p>
                 </div>
+
                 <div class="ilic">
                     <p>7. An urn contains 10 red, 8 black, and 7 green balls. One of the colors is chosen at random (meaning that the chosen color is equally likely to be any of the 3 colors), and then 4 balls are randomly chosen from the urn. Let X be the number of these balls that are of the chosen color.</p>
 
@@ -136,8 +146,113 @@
                     </ol>
 
                     <p><i>Hint:</i> Express \( X \) in terms of \( X_1, X_2, X_3, X_4 \).</p>
-
                 </div>
+                <div class="sol">
+                    令$ R=\{选取到的小球是红色\}, G=\{选取到的小球是绿色\},B=\{选取到的小球是黑色\}$
+$$
+P(X=0)=\frac{1}{3}\left[ P(X=0|R)+P(X=0|G)+P(X=0|B) \right] =\frac{1}{3}\left[ \frac{\displaystyle \binom{15}{4}}{\displaystyle \binom{25}{4}}+\frac{\displaystyle \binom{17}{4}}{\displaystyle \binom{25}{4}}+\frac{\displaystyle \binom{18}{4}}{\displaystyle \binom{25}{4}}\right] 
+$$
+
+以选取到的颜色是红色作为条件：
+$$
+P(X_1=1|R)=\frac{\displaystyle \binom{10}{1}}{\displaystyle \binom{25}{1}}=\frac{10}{25}
+$$
+$$
+P(X_2=1|R)=\frac{\displaystyle \binom{10}{1}\binom{9}{1}}{\displaystyle \binom{25}{1}\binom{24}{1}}+\frac{\displaystyle \binom{15}{1}\binom{10}{1}}{\displaystyle \binom{25}{1}\binom{24}{1}}=\frac{10}{25}
+$$
+$$
+P(X_3=1|R)=\frac{\displaystyle \binom{10}{1}\binom{9}{1}\binom{8}{1}+\binom{10}{1}\binom{15}{1}\binom{9}{1}+\binom{15}{1}\binom{10}{1}\binom{9}{1}+\binom{15}{1}\binom{14}{1}\binom{10}{1}}{\displaystyle \binom{25}{1}\binom{24}{1}\binom{23}{1}}=\frac{10}{25}
+$$
+$$
+P(X_4=1|R)=\frac{\binom{10}{1}\binom{9}{1}\binom{8}{1}\binom{7}{1}+\binom{10}{1}\binom{15}{1}\binom{9}{1}\binom{8}{1}+\binom{15}{1}\binom{10}{1}\binom{9}{1}\binom{8}{1}+\binom{15}{1}\binom{14}{1}\binom{10}{1}\binom{9}{1}+\binom{15}{1}\binom{14}{1}\binom{13}{1}\binom{10}{1}+\binom{15}{1}\binom{10}{1}\binom{14}{1}\binom{9}{1}}{ \binom{25}{1}\binom{24}{1}\binom{23}{1}\binom{22}{1}}=\frac{10}{25}
+$$
+同理可以得到:
+$$
+P(X_i=1|G)=\frac{7}{25}
+$$
+$$
+P(X_i=1|B)=\frac{8}{25}
+$$
+$$
+P(X_i=1)=\frac{1}{3}\left[ P(X_I=1|R)+P(X_i=1|G)+P(X_i=1|B) \right] 
+$$
+$\displaystyle P(X_i=1)=\frac{1}{3}(\frac{10+7+8}{25})=\frac{1}{3}$
+<p>$X=X_1+X_2+X_3+X_4$ 那么：
+$$E(X)=E(X_1)+E(X_2)+E(X_3)+E(X_4)=\frac{4}{3}$$
+</p>
+                </div>
+                <div class="ilic">
+                    <p><strong>(Theoretical Exercises #4.28)</strong> If <em>X</em> is a geometric random variable, show analytically that</p>
+                    <p>
+                        $ \mathbb{P}(X = n + k \mid X > n) = \mathbb{P}(X = k) $
+                    </p>
+                    <p>Using the interpretation of a geometric random variable, give a verbal argument as to why the preceding equation is true.</p>
+                </div>
+                <div class="sol">
+                    $$
+                    \begin{aligned}
+                    P(X=n+k|X>n) & = \frac{P(X=n+k,X>n)}{P(X>n)}  \\
+                    & = \frac{\displaystyle (1-p)^{n+k-1}p}{\displaystyle 1-\sum_{k=1}^{n-1}(1-p)^{k-1}p}  \\
+                    & = \frac{\displaystyle (1-p)^{n+k-1}p}{\displaystyle 1-\frac{1-(1-p)^{n-1}}{1-(1-p)}p}  \\
+                    & = (1-p)^kp  \\
+                    & = P(X=k)  \\
+                    \end{aligned}
+                    $$
+                </div>
+
+                <div class="ilic">
+                    <p><strong>(Theoretical Exercises #4.31)</strong> Balls numbered 1 through <em>N</em> are in an urn. Suppose that <em>n</em>, where <em>n ≤ N</em>, of them are randomly selected without replacement. Let <em>Y</em> denote the largest number selected.</p>
+
+                    <p>(a) Find the probability mass function of <em>Y</em>.</p>
+
+                    <p>(b) Derive an expression for <em>E[Y]</em> and then use Fermat's combinatorial identity:</p>
+
+                    <p>
+                        $ \binom{n}{k} = \sum_{i=k}^{n} \binom{i-1}{k-1}, \quad n \geq k $
+                    </p>
+
+                    <p>to simplify the expression.</p>
+                </div>
+                <div class="sol">
+                    <p>$Y=n,n+1,n+2, \ldots ,N$，Y等于 i 说明比 i 大的 N-i 个数没有被选中，并且 i 被选中了。设 $E_i=\{ i 被选中\}$，$F_i=\{后 N-i 个数没有被选中\}$
+                    $$
+                    P(Y=i)=P(E_i F_i)=P(E_i|F_i)P(F_i)=\frac{\displaystyle \binom{i-1}{n-1}}{\displaystyle \binom{i}{n}}\frac{\displaystyle \binom{i}{n}}{\displaystyle \binom{N}{i}}=\frac{\displaystyle \binom{i-1}{n-1}}{\displaystyle \binom{N}{i}}
+                    $$</p>
+                    <p>$$
+                        E(Y)=\sum_{i=n}^{N}\frac{i\displaystyle \binom{i-1}{n-1}}{\displaystyle \binom{N}{i}}
+                        $$</p>
+                </div>
+
+                <div class="ilic">
+                    <p><strong>(Theoretical Exercises #4.36)</strong> An urn initially contains one red and one blue ball. At each stage, a ball is randomly chosen and then replaced along with another of the same color. Let <em>X</em> denote the selection number of the first chosen ball that is blue. For instance, if the first selection is red and the second blue, then <em>X</em> is equal to 2.</p>
+
+                    <p>(a) Find $ \mathbb{P}(X > i), i \geq 1 $.</p>
+
+                    <p>(b) Show that with probability 1, a blue ball is eventually chosen. (That is, show that $ \mathbb{P}(X < \infty) = 1 $.)</p>
+
+                    <p>(c) Find $ \mathbb{E}[X] $.</p>
+                </div>
+                <div class="sol">
+                    <p>设第 i 次取到的球是红球事件为 $R_i$，$P(R_i)=\frac{1}{2}$，$P(X=i)=P(R_1R_2\cdots R_{i-1}B_i)=$
+                        $$
+                        \begin{aligned}
+                        P(X >i) & = 1-P(X\le i)  \\
+                        & = 1-\sum_{k=1}^{i}(\frac{1}{2})^k  \\
+                        & = 1-\frac{\frac{1}{2}\left[ 1-(\frac{1}{2})^i \right] }{\frac{1}{2}}  \\
+                        & = (\frac{1}{2})^i  \\
+                        \end{aligned}
+                        $$</p>
+                    <p>讨论$P(X<\infty)$ 
+                        $$
+                        P(X< \infty)=\lim_{n \to \infty}P(X\le n)=\sum_{k=1}^n(\frac{1}{2})^k=1
+                        $$</p>
+                    <p>$E(X)$的表达式如下
+                        $$
+                        E(X)=\sum_{i=1}^{\infty}i(\frac{1}{2})^i
+                        $$
+                        设 $\displaystyle f(x)=\sum_{n=1}^{\infty}$，$\displaystyle \frac{f(x)}{x}=\left( \sum_{n=1}^{\infty}x^n \right)' \implies f(x)=\frac{x}{(1-x)^2}\implies f(\frac{1}{2})=2$，即 $E(X)=2$</p>
+                </div>
+                
             </article>
         </div>
         

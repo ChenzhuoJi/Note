@@ -57,55 +57,122 @@ body {
     margin-top: 20px;
     display: grid;
     grid-template-columns: 50% 50%; /* 2列布局 */
-    grid-gap: 10px;
+    grid-gap: 5px;
     width: 100%;
     height: auto;
 }
-
-/* 定义各栏中的文章卡片样式 */
 .grid-arc{
     display: flex;
     flex-direction: column;
-
 }
 
-.grid-arc article {
+/* 定义各栏中的文章卡片样式 */
+.grid-arc1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+}
+
+.grid-arc2{
+    display: flex;
+    flex-direction: column;
+    margin-right:20%;
+}
+/* grid-arc 里面的 article 就是文章卡片 */
+article {
+    /* flex布局 */
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
-
+    /*定义文章栏大小  */
     min-height: 20vh;
     height: auto;
     width: 90%;
-
+    /* 内边距 */
     padding: 30px;
-
+    /* 外边距 */
     margin-left: auto;
     margin-right: auto; /*居中效果*/
     margin-top: 20px;
-
-    border-bottom: 2px solid rgba(0, 0, 0, 0.216);
-    border-left: 2px solid rgba(0, 0, 0, 0.216);
-    border-right: 2px solid rgba(0, 0, 0, 0.216);
-    border-top: 2px solid rgba(0, 0, 0, 0.216);
+    /* 边框样式 */
+    border: 2px solid rgba(0, 0, 0, 0.216);
     border-radius:20px;
-
+    /* 平滑过渡 */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.arctitle {
-    font-size: 24px;
-    font-family: "Noto Sans SC ";
-    font-weight: 400;
-    margin-bottom: 10px;
+.grid-arc article:hover{
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.arcontent {
+.arcbox {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: 60% 40%; /* 左侧文本区域自适应，右侧图片自动宽度 */
+    align-items: start; /* 让内容和图片顶部对齐 */
+    gap: 15px; /* 设置文本和图片之间的间距 */
+
+     
+    border-radius: 10px;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    font-family: "Noto Sans SC";
     font-size: 16px;
+    
     color: #555;
+    
+    background-color: rgba(95, 158, 160, 0.531);
+  }
+  
+.text-cont {
+    padding: 30px;
+    display: flex;
+    flex-direction: column ;/* 文本内容默认会在 grid 的第一列，占据最大宽度 */
 }
 
+.poster-img {
+    display: block; /* 使 poster-img 成为块元素 */
+    margin-left: auto; /* 将 img 推到最右边 */
+    max-height: 300px
+  }
+
+.poster-img img{
+    width: auto; /* 图片的宽度自动适应内容 */
+    height: 100%;
+    max-width: 500px; /* 设置图片的最大宽度，防止太大 */
+}
+  /* 内容悬停 */
+.arcbox:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+.arcbox p{
+font-size: 16px;
+color: #555;
+font-family: "Noto Sans SC";
+}
+
+.arctitle {
+font-size: 24px;
+font-family: "Noto Sans SC ";
+font-weight: 400;
+margin-bottom: 10px;
+}
+
+.arcdate {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: gray;
+  }
 
 /* 右侧栏样式 */
 .sidebar {
@@ -191,39 +258,6 @@ body {
     color: rgb(242, 96, 203);
 }
 
-.arcbox {
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-family: "Noto Sans SC";
-    font-size: 16px;
-    color: #555;
-    background-color: rgba(95, 158, 160, 0.531);
-  }
-  
-  /* 内容悬停 */
-  .arcbox:hover {
-    transform: scale(1.01);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .arcbox p{
-    font-size: 16px;
-    color: #555;
-    font-family: "Noto Sans SC";
-  }
-  
-  .arctitle {
-    font-size: 24px;
-    font-family: "Noto Sans SC ";
-    font-weight: 400;
-    margin-bottom: 10px;
-}
 
 /* 整个页面滚动 */
 body {
